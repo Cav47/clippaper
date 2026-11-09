@@ -1,0 +1,9 @@
+[submodule "external/day-trader-skill"]
+	path = external/day-trader-skill
+	url = https://github.com/Jakeschincariol/day-trader-skill.git
+[submodule "external/code-review-graph"]
+	path = external/code-review-graph
+	url = https://github.com/tirth8205/code-review-graph.git
+[submodule "external/ponytail"]
+	path = external/ponytail
+	url = https://github.com/DietrichGebert/ponytail.git

@@ -8,6 +8,7 @@ Projeto editorial para adultos responsáveis por famílias, com conteúdo práti
 - Os roteiros ficam como rascunhos para revisão humana; nenhuma publicação é automática.
 - O agendamento semanal da rotina está configurado para segunda-feira, às 9h (horário de Los Angeles).
 - A rotina pode pesquisar fontes quando necessário e deve guardar links para afirmações factuais.
+- A Diretora usa o modelo Paperclip `openai/fast`; o proxy local o encaminha ao alias LLMF `best`, que mantém a seleção e o fallback de provedores.
 - Os arquivos `BRIEF.md`, `PILOTO-7-DIAS.md` e `SHORT-*.md` descrevem pauta, critérios e rascunhos.
 
 ## Vídeo e publicação
@@ -16,8 +17,8 @@ O fluxo atual entrega roteiro e legenda, não um arquivo de vídeo pronto. A edi
 
 ## Privacidade e segurança
 
-Nunca adicione chaves, senhas, cookies, tokens ou arquivos de banco de dados ao Git. Configure credenciais no gerenciador de segredos do ambiente. Exemplos de configuração podem ser guardados como `.env.example`, sempre sem valores reais.
+Nunca adicione chaves, senhas, cookies, tokens ou arquivos de banco de dados ao Git. Configure credenciais no gerenciador de segredos do ambiente. O arquivo local `.llmf-api-key` é gerado no próprio ambiente, tem permissão restrita e é ignorado pelo Git; nunca copie esse valor para este repositório. Exemplos de configuração podem ser guardados como `.env.example`, sempre sem valores reais.
 
 ## Preparação para VPS
 
-Antes da migração, será preciso provisionar a VPS, instalar e validar o Paperclip, configurar domínio/TLS e armazenamento persistente, migrar o backup do banco, configurar segredos fora do Git e testar o agendador após reiniciar. Este repositório guarda os materiais e código do projeto; não contém sozinho o banco de dados, as conexões de contas nem a configuração local do Paperclip.
+Antes da migração, será preciso provisionar a VPS, instalar e validar o Paperclip, configurar domínio/TLS e armazenamento persistente, migrar o backup do banco, configurar segredos fora do Git e testar o agendador após reiniciar. Este repositório guarda os materiais, instruções e código do projeto; não contém sozinho o banco de dados, as conexões de contas nem as chaves locais do Paperclip/LLMF. Na VPS, recrie `.llmf-api-key`, inicie o LLMF com `--api-keys-file` apontando para esse arquivo e execute `llmf-model-proxy.mjs` como serviço local antes de habilitar o agendador.

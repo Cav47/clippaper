@@ -1,7 +1,15 @@
 import { createServer } from 'node:http';
+import { readFileSync } from 'node:fs';
 
 const upstream = 'http://127.0.0.1:8000';
 const allowedPaths = new Set(['/v1/chat/completions', '/v1/models']);
+const apiKeyPath = new URL('./.llmf-api-key', import.meta.url);
+let upstreamApiKey = '';
+try {
+  upstreamApiKey = readFileSync(apiKeyPath, 'utf8').trim();
+} catch {
+  // The key is optional while running against an unauthenticated local LLMF server.
+}
 
 const server = createServer(async (request, response) => {
   if (!allowedPaths.has(request.url) || !['GET', 'POST'].includes(request.method)) {
@@ -17,12 +25,19 @@ const server = createServer(async (request, response) => {
   if (request.url === '/v1/chat/completions' && body.length) {
     try {
       const payload = JSON.parse(body.toString('utf8'));
-      if (typeof payload.model !== 'string' || !payload.model.startsWith('openai/')) {
+      if (
+        typeof payload.model !== 'string' ||
+        (payload.model !== 'fast' && !payload.model.startsWith('openai/'))
+      ) {
         response.writeHead(400).end();
         return;
       }
-      const model = payload.model.slice('openai/'.length);
-      payload.model = model === 'fast' ? 'llm7/codestral-latest' : model;
+      const model = payload.model === 'fast'
+        ? 'fast'
+        : payload.model.slice('openai/'.length);
+      // `fast` is the Paperclip model ID. Route it through LLMF's tool-capable
+      // ranked alias so provider fallback remains available to agent tools.
+      payload.model = model === 'fast' ? 'best' : model;
       modelName = payload.model;
       streaming = payload.stream === true;
       body = Buffer.from(JSON.stringify(payload));
@@ -41,9 +56,11 @@ const server = createServer(async (request, response) => {
   });
 
   try {
+    const headers = { 'content-type': 'application/json' };
+    if (upstreamApiKey) headers.authorization = `Bearer ${upstreamApiKey}`;
     const result = await fetch(new URL(request.url, upstream), {
       method: request.method,
-      headers: { 'content-type': 'application/json' },
+      headers,
       body: request.method === 'POST' ? body : undefined,
       signal: controller.signal,
     });

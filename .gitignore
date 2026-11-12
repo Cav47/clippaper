@@ -16,3 +16,6 @@ node_modules/
 # Dados operacionais do Paperclip
 .paperclip/
 backups/
+
+# Chave local do proxy LLMF (nunca versionar)
+.llmf-api-key

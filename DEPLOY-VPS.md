@@ -7,7 +7,7 @@ Este documento prepara a migração; não provisiona servidor nem transfere o Pa
 - Repositório: [`Cav47/clippaper`](https://github.com/Cav47/clippaper), branch `main` (público).
 - Paperclip local verificado em `2026.1106.0`; os dados operacionais vivem fora deste repositório.
 - O agente usa `openai/fast` por meio do proxy Node local em `127.0.0.1:8001`, que encaminha para LLMF em `127.0.0.1:8000`.
-- O projeto já tem rascunhos editoriais; ainda não tem pipeline de vídeo nem publicação automática.
+- O projeto tem template Remotion vertical 1080×1920 e skills de texto, localização, vídeo e economia de tokens; o template ainda não foi renderizado/validado. Piper TTS 1.8.0 existe apenas no ambiente Python local; o modelo de voz não está instalado. Não há publicação automática.
 - A chave `.llmf-api-key` é local e ignorada pelo Git. Nunca copiar segredos, banco, exportações ou backups para este repositório público.
 
 ## Decisões antes de contratar/configurar
@@ -51,11 +51,12 @@ Após importar na VPS:
 2. Configurar domínio e DNS; instalar Paperclip na versão escolhida, modo de implantação autenticado, HTTPS e banco/armazenamento persistentes.
 3. Criar login administrativo e confirmar que a porta do Paperclip só é alcançada por HTTPS/proxy reverso ou VPN.
 4. Instalar o modelo/proxy como serviços persistentes, com restart automático. Gerar uma nova chave local para o LLMF na VPS, permissões restritas e referência via arquivo/segredos. Não reutilizar nem versionar `.llmf-api-key` do Mac.
-5. Clonar o repositório, importar a empresa e apontar o workspace para o clone persistente.
-6. Reconectar os serviços e credenciais necessários diretamente no Paperclip. Nunca colocar tokens em arquivos versionados, logs ou comandos salvos no histórico.
-7. Rodar o diagnóstico oficial do Paperclip, confirmar `/api/health`, login, backup recente, acesso ao workspace e chamada de ferramenta do agente.
-8. Fazer uma execução controlada que crie um roteiro, leia-o de volta e anexe-o ao ticket. Confirmar que nenhum post foi enviado.
-9. Reiniciar Paperclip e serviços do modelo; conferir que dados, anexos, agente, rotinas e conexões continuam disponíveis. Só então habilitar o agendador.
+5. Instalar RTK no usuário do OpenCode (opcional; versão OpenCode compatível 1.18.29+) e ativar o plugin; isso comprime saídas de shell, não elimina custos do modelo.
+6. Clonar o repositório, importar a empresa e apontar o workspace para o clone persistente.
+7. Reconectar os serviços e credenciais necessários diretamente no Paperclip. Nunca colocar tokens em arquivos versionados, logs ou comandos salvos no histórico.
+8. Rodar o diagnóstico oficial do Paperclip, confirmar `/api/health`, login, backup recente, acesso ao workspace e chamada de ferramenta do agente.
+9. Fazer uma execução controlada que crie um roteiro, leia-o de volta e anexe-o ao ticket. Confirmar que nenhum post foi enviado.
+10. Reiniciar Paperclip e serviços do modelo; conferir que dados, anexos, agente, rotinas e conexões continuam disponíveis. Só então habilitar o agendador.
 
 ## Pronto para operar quando
 

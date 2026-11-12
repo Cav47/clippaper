@@ -10,10 +10,11 @@ Projeto editorial para adultos responsáveis por famílias, com conteúdo práti
 - A rotina pode pesquisar fontes quando necessário e deve guardar links para afirmações factuais.
 - A Diretora usa o modelo Paperclip `openai/fast`; o proxy local o encaminha ao alias LLMF `best`, que mantém a seleção e o fallback de provedores.
 - Os arquivos `BRIEF.md`, `PILOTO-7-DIAS.md` e `SHORT-*.md` descrevem pauta, critérios e rascunhos.
+- Skills próprias ficam em `skills/`; as fontes oficiais e atribuições estão em `skills/SOURCES.md`.
 
 ## Vídeo e publicação
 
-O fluxo atual entrega roteiro e legenda, não um arquivo de vídeo pronto. A edição/renderização do Short e a revisão final ainda precisam acontecer antes da postagem. Metricool está conectado ao Paperclip, mas nenhuma rotina agenda ou publica conteúdo.
+O projeto agora inclui um template Remotion vertical 1080×1920 e skills de roteiro, vídeo, tradução/localização e economia de tokens. O Piper TTS 1.8.0 está num ambiente Python local ignorado pelo Git; nenhum modelo de voz foi baixado e nenhum MP4 foi renderizado ainda. Metricool está conectado, mas nenhuma rotina agenda ou publica conteúdo.
 
 ## Privacidade e segurança
 

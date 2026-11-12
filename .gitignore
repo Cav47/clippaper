@@ -1,0 +1,18 @@
+# Credenciais e dados locais
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Dependencias e caches
+node_modules/
+.npm/
+.cache/
+.DS_Store
+
+# Dados operacionais do Paperclip
+.paperclip/
+backups/

@@ -4,16 +4,16 @@ Projeto editorial para adultos responsáveis por famílias, com conteúdo práti
 
 ## Como funciona hoje
 
-- A Diretora de conteúdo prepara um roteiro curto por semana no Paperclip.
+- Até domingo, a Diretora de conteúdo prepara um rascunho por dia às 9h (horário de Los Angeles); no domingo, o agendamento volta a ser semanal.
 - Os roteiros ficam como rascunhos para revisão humana; nenhuma publicação é automática.
-- O agendamento semanal da rotina está configurado para segunda-feira, às 9h (horário de Los Angeles).
+- Após o período de validação, a rotina fica agendada para segunda-feira, às 9h (horário de Los Angeles).
 - A rotina pode pesquisar fontes quando necessário e deve guardar links para afirmações factuais.
 - A Diretora usa o modelo Paperclip `openai/fast`; o proxy local o encaminha ao alias LLMF `best`, que mantém a seleção e o fallback de provedores.
 - Os arquivos `BRIEF.md`, `PILOTO-7-DIAS.md` e `SHORT-*.md` descrevem pauta, critérios e rascunhos.
 
 ## Vídeo e publicação
 
-O fluxo atual entrega roteiro e legenda, não um arquivo de vídeo pronto. A edição/renderização do Short e a revisão final ainda precisam acontecer antes da postagem. Metricool está conectado ao Paperclip, mas a rotina semanal não agenda nem publica conteúdo.
+O fluxo atual entrega roteiro e legenda, não um arquivo de vídeo pronto. A edição/renderização do Short e a revisão final ainda precisam acontecer antes da postagem. Metricool está conectado ao Paperclip, mas nenhuma rotina agenda ou publica conteúdo.
 
 ## Privacidade e segurança
 

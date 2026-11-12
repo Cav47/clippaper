@@ -1,0 +1,21 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "openai/fast",
+  "provider": {
+    "openai": {
+      "name": "LLMF local",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "baseURL": "http://127.0.0.1:8001/v1",
+        "apiKey": "local-proxy-no-auth"
+      },
+      "models": {
+        "fast": {
+          "name": "LLMF Fast local",
+          "tool_call": true,
+          "limit": {"context": 32768, "output": 2048}
+        }
+      }
+    }
+  }
+}

@@ -12,7 +12,7 @@ A rotina da Diretora está habilitada diariamente às 9h no fuso America/Sao_Pau
 
 ## Entrega atual
 
-A Diretora delega produção ao Criador e revisão à Revisora; a Analista agenda somente após aprovação editorial da versão exata e confirmação dos canais. A publicação automática continua autorizada apenas nesse fluxo e em contas conectadas. ROT-21 foi agendada no Metricool com publicação automática para YouTube Shorts e Instagram Reels; confira o status final no Planner antes de declarar que publicou. ROT-28 tem um novo rascunho “ritual leve para dormir”, com roteiro/legenda e MP4 local de 30 s, anexado no ticket e aguardando revisão editorial. Ele não tem URL pública permanente ou `mediaId`; não agendar nem publicar até aprovação e mídia acessível.
+A Diretora delega produção ao Criador e revisão à Revisora; a Analista agenda somente após aprovação editorial da versão exata e confirmação dos canais. A publicação automática continua autorizada apenas nesse fluxo e em contas conectadas. ROT-21 foi agendada no Metricool com publicação automática para YouTube Shorts e Instagram Reels; confira o status final no Planner antes de declarar que publicou. ROT-28 teve revisão editorial aprovada. A mídia foi hospedada em um GitHub Release público e importada pelo Metricool. ROT-30 agendou o Instagram Reels para 14/11/2026 às 10h e o YouTube Short às 16h (America/Los_Angeles), ambos com `autoPublish=true` e estado `PENDING` na última conferência. IDs e links estão em `BLOQUEIO-AGENDAMENTO-ROT-30.md`; confirmar resultado após o horário antes de declarar que publicou.
 
 ## Como os Shorts e posts serão publicados
 
@@ -24,7 +24,7 @@ A Diretora delega produção ao Criador e revisão à Revisora; a Analista agend
 
 A rotina ativa da Diretora cria uma peça por execução, usa subtarefas para Pesquisador → Criador → Revisora e delega à Analista apenas depois da aprovação exata. O gatilho atual é diário às 9h em America/Sao_Paulo até domingo; a configuração de domingo deve restaurá-lo para segunda-feira às 9h em America/Los_Angeles.
 
-Ainda não há hospedagem pública permanente conectada ao projeto, e o anexo local não é uma URL utilizável pelo Metricool. Para liberar esse passo, conecte uma hospedagem durável autorizada para os MP4s ou habilite upload de mídia do Metricool pela integração atual.
+Para ROT-30, o repositório GitHub público foi usado como hospedagem permanente de origem; o Metricool importou os arquivos e passou a servir as mídias pela própria CDN. Para novos vídeos, repetir esse fluxo apenas depois da revisão editorial exata e registrar a URL permanente e os IDs retornados no ticket.
 
 ## Estabilidade do Paperclip
 

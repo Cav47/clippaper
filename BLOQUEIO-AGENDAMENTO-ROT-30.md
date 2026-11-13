@@ -1,39 +1,29 @@
-# Bloqueio de Agendamento — ROT-30 / Short Pauta A (sono)
+# Resolução do agendamento — ROT-30 / Short Pauta A (sono)
 
-## Tarefa
-Agendar Short Pauta A (sono) no Metricool — ROT-26 (ticket ROT-28)
+## Estado
+**Resolvido.** A mídia foi hospedada e importada pelo Metricool; os dois posts foram agendados com publicação automática. Na última verificação, ambos estavam `PENDING`; ainda não estavam publicados.
 
-## Canais conectados da marca (confirmados via Metricool MCP getBrandSettings)
-- Plataforma: Instagram — conta `cav470609`
-- Plataforma: YouTube — conta `UCewElO68XOz1f4Gf7FWxSuA`
-- Marca id: 8070469
-- Fuso: America/Los_Angeles
-- Conexão Metricool MCP: ativa, grant organizacional e catálogo carregado
+## Conteúdo e mídia aprovados
+- Revisão editorial exata: ROT-28 (concluída/aprovada).
+- MP4: `video/out/SHORT-2026-11-13-sono.mp4` (30 s, 1080×1920, H.264+AAC).
+- SHA-256 verificado: `103e8caa7597b0b04d995025ec56ad2c72f709afd6c30b96641863bbf9dc6436`.
+- Legenda agendada: a versão aprovada na ROT-28, sem alterações.
 
-## Post existente no calendário (não é deste ticket)
-- ROT-21 (Short de estudo Mara e Theo): 13/11/2026 12:00 PT, `autoPublish=true`, status `PENDING` no Instagram e YouTube, mídia já hospedada pelo Metricool. Não alterada.
+## Hospedagem
+Foi criado um GitHub Release público, no repositório `Cav47/clippaper`, para fornecer a URL HTTPS permanente solicitada:
 
-## Mídia do Short de sono
-- Arquivo local: `video/out/SHORT-2026-11-13-sono.mp4`
-- Tamanho: 3.566.866 bytes
-- SHA-256: `103e8caa7597b0b04d995025ec56ad2c72f709afd6c30b96641863bbf9dc6436`
-- Especificações declaradas: 30 s, 1080x1920, H.264+AAC
+- Release: https://github.com/Cav47/clippaper/releases/tag/media-short-sono-rot28-2026-11-13
+- Arquivo: https://github.com/Cav47/clippaper/releases/download/media-short-sono-rot28-2026-11-13/SHORT-2026-11-13-sono.mp4
 
-## Status do agendamento
-**BLOQUEADO** — não agendado, não publicado. Nenhuma tentativa de agendamento foi feita.
+O Metricool importou e hospedou cópias da mídia. As URLs retornadas foram `https://static.metricool.com/planner/202611/8070469-file-16903012559689728933.mp4` (Instagram) e `https://static.metricool.com/planner/202611/8070469-file-17429988090800506008.mp4` (YouTube).
 
-## Motivo do bloqueio
-O MP4 aprovado no ROT-28 permanece apenas no workspace local. Não há:
-- URL HTTPS pública e permanente para o vídeo
-- `mediaId` do Metricool validado para este vídeo
+## Agendamentos confirmados
+Marca `8070469`, fuso `America/Los_Angeles`; canais confirmados: Instagram `cav470609` e YouTube `UCewElO68XOz1f4Gf7FWxSuA`.
 
-Conforme BRIEF.md e OPERACAO.md, o agendamento no Metricool exige mídia acessível por URL permanente ou `mediaId` validado. Não usar links locais/temporários. Não publicar nem agendar sem mídia acessível.
+- **Instagram Reels:** 14/11/2026 às 10:00 PT; ID Metricool `427200213`; `autoPublish=true`; estado `PENDING`. [Abrir no Planner](https://app.metricool.com/planner/calendar?blogId=8070469&openWithPostUuid=5372553215686232996)
+- **YouTube Short:** 14/11/2026 às 16:00 PT; ID Metricool `427200528`; `autoPublish=true`; estado `PENDING`. [Abrir no Planner](https://app.metricool.com/planner/calendar?blogId=8070469&openWithPostUuid=-8592290434060629229)
 
-## Ação necessária
-Conectar hospedagem durável autorizada para MP4s ou habilitar upload de mídia do Metricool pela integração atual, para obter `mediaId` ou URL permanente pública. Somente depois a Analista poderá agendar no próximo horário recomendado válido dentro da cadência.
+Os horários foram escolhidos usando `getBestTimeToPostByNetwork` para cada rede. Uma consulta posterior de `getScheduledPosts` confirmou cada conta, horário, status e mídia hospedada pelo Metricool. Nenhum conteúdo foi publicado durante a resolução.
 
-## Conteúdo aprovado (versão exata, não alterar)
-Legenda: "A família pode experimentar uma sequência simples: banheiro, pijama e uma história curta. Na história fictícia de Ana e Lucas, um aviso dez minutos antes sinaliza a transição. Adapte os passos à realidade da sua casa e teste por alguns dias. Qual pequeno ritual funciona melhor por aí? #RotinaEmFamilia #RotinaDoSono #VidaEmFamilia"
-
-## Resultado
-Nenhum identificador, link, data/hora ou status de publicação foi gerado, pois o agendamento não pôde ser criado.
+## Correção sobre o erro 403
+O `403 Board access required` afetava somente os endpoints de descoberta `aggregator/apps` e `composio/apps`. A conexão Metricool estava ativa; as ferramentas diretas de leitura e agendamento funcionaram.

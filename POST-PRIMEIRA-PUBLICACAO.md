@@ -3,6 +3,7 @@
 **Estado:** rascunho enviado para revisão no Paperclip; ainda não publicado.
 **Formato:** Short/Reel vertical, MP4 tipográfico com narração pt-BR gerada localmente.
 **Arquivo:** `video/out/SHORT-2026-11-12-narrado.mp4`
+**URL pública permanente / mediaId Metricool:** ainda não disponível; o arquivo está somente no workspace local. Não agendar até o Criador entregar uma mídia acessível pelo Metricool.
 **Destinos pretendidos:** YouTube Shorts e Instagram Reels, somente se os canais estiverem conectados e a Revisora aprovar o material.
 
 ## Legenda proposta

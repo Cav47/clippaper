@@ -6,17 +6,19 @@ A rotina da Diretora está habilitada diariamente às 9h no fuso America/Sao_Pau
 
 ## Entrega atual
 
-A Diretora produz roteiros e legendas como arquivos Markdown no workspace. Cada arquivo precisa estar anexado ao ticket como rascunho e passar por revisão humana. O roteiro `SHORT-SEMANA-2026-11-12.md` é a primeira entrega verificada. Nenhum conteúdo foi publicado.
+A Diretora delega produção ao agente Criador de Conteúdo, que salva roteiro, legenda e mídia no workspace. Cada peça deve passar pela Revisora antes da publicação. O responsável autorizou publicação automática depois da aprovação editorial da versão exata, sem nova aprovação humana por peça. A primeira edição ilustrada e narrada está em ROT-24 como referência; não publicar até que a Revisora aprove essa edição exata. Nenhum conteúdo foi publicado.
 
 ## Como os Shorts e posts serão publicados
 
-1. Revisar e aprovar roteiro, legenda e afirmações factuais.
-2. Produzir e revisar o vídeo vertical final (MP4) com imagens, narração, legendas na tela e trilha com direitos de uso. O preview tipográfico inicial foi renderizado em `video/out/SHORT-2026-11-12-preview.mp4`. A narração local com Piper usa o modelo pt_BR-cadu-medium (CC0) e é gerada por `video/scripts/generate-voiceover.sh`; nenhum serviço de voz pago é necessário. Ainda é necessário revisar o novo MP4 narrado antes de publicar.
-3. Para um Short do YouTube ou Reel do Instagram, anexar o vídeo final e preencher os metadados exigidos da plataforma. Para post estático, preparar imagem/carrossel e texto próprios.
-4. Usar Metricool para enviar à fila de revisão/agendamento somente após aprovação humana e confirmação das contas/canais pretendidos.
-5. Verificar o resultado no calendário do Metricool e, após o horário, confirmar a publicação na plataforma.
+1. Pesquisar pauta e continuidade; o agente Criador produz roteiro, legenda e vídeo/post no workspace.
+2. A Revisora aprova ou bloqueia o texto e o arquivo exatos. Qualquer alteração posterior exige revisão da versão atualizada.
+3. Para cada vídeo, o Criador também entrega URL HTTPS pública permanente ou `mediaId` Metricool e registra no ticket. Use upload direto suportado pelo Metricool ou armazenamento durável já conectado e aprovado. Se nenhum estiver disponível, anexe o MP4 e bloqueie o agendamento; não use links locais, temporários ou permissões públicas improvisadas.
+4. Depois da aprovação e com mídia acessível, a Analista confirma no Metricool as contas conectadas da marca e cria o agendamento no próximo horário recomendado e dentro da cadência da rotina. Não pede aprovação humana individual novamente.
+5. Verificar o calendário do Metricool e, após o horário, confirmar a publicação na plataforma; registrar conta, horário, identificador e link. Se a API não confirmar, reportar bloqueio, não declarar sucesso.
 
-A primeira publicação está preparada como rascunho nas tarefas ROT-21 e ROT-22 do Paperclip. O MP4 narrado foi anexado à tarefa de revisão; não publicar antes da aprovação da Revisora e da confirmação dos canais Metricool.
+A primeira edição está no ROT-24 e a revisão anterior do ROT-22 não cobre a versão ilustrada anexada ao ROT-24. Não publicar a versão antiga. O ROT-21 só pode prosseguir quando a Revisora tiver aprovado a edição ilustrada atual e Metricool confirmar o canal conectado.
+
+Ainda não há hospedagem pública permanente conectada ao projeto, e o anexo local não é uma URL utilizável pelo Metricool. Para liberar esse passo, conecte uma hospedagem durável autorizada para os MP4s ou habilite upload de mídia do Metricool pela integração atual.
 
 ## Skills e custo de tokens
 

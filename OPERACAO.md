@@ -2,7 +2,7 @@
 
 ## Até domingo
 
-A rotina da Diretora está habilitada diariamente às 9h, no fuso America/Los_Angeles. O acompanhamento do Paperclip deve confirmar servidor, agendador, execução e entrega. No domingo, restaurar o gatilho para segunda-feira às 9h, evitando execuções diárias durante a viagem. A configuração efetiva fica no banco do Paperclip; este arquivo registra o procedimento e não substitui backup/migração desse banco.
+A rotina da Diretora está habilitada diariamente às 9h no fuso America/Sao_Paulo até domingo. No domingo, restaurar o gatilho para segunda-feira às 9h em America/Los_Angeles, evitando execuções diárias durante a viagem. A configuração efetiva fica no banco do Paperclip; este arquivo registra o procedimento e não substitui backup/migração desse banco.
 
 ## Entrega atual
 
@@ -11,12 +11,12 @@ A Diretora produz roteiros e legendas como arquivos Markdown no workspace. Cada 
 ## Como os Shorts e posts serão publicados
 
 1. Revisar e aprovar roteiro, legenda e afirmações factuais.
-2. Produzir e revisar o vídeo vertical final (MP4) com imagens, narração, legendas na tela e trilha com direitos de uso. O primeiro preview local do template Remotion 1080×1920 foi renderizado e conferido no começo, meio e fim: `video/out/SHORT-2026-11-12-preview.mp4`. É tipográfico e silencioso, sem cenas fotorrealistas, voz ou música, e não está pronto para publicação. Piper TTS 1.8.0 está instalado em ambiente isolado; nenhum modelo de voz foi baixado.
+2. Produzir e revisar o vídeo vertical final (MP4) com imagens, narração, legendas na tela e trilha com direitos de uso. O preview tipográfico inicial foi renderizado em `video/out/SHORT-2026-11-12-preview.mp4`. A narração local com Piper usa o modelo pt_BR-cadu-medium (CC0) e é gerada por `video/scripts/generate-voiceover.sh`; nenhum serviço de voz pago é necessário. Ainda é necessário revisar o novo MP4 narrado antes de publicar.
 3. Para um Short do YouTube ou Reel do Instagram, anexar o vídeo final e preencher os metadados exigidos da plataforma. Para post estático, preparar imagem/carrossel e texto próprios.
 4. Usar Metricool para enviar à fila de revisão/agendamento somente após aprovação humana e confirmação das contas/canais pretendidos.
 5. Verificar o resultado no calendário do Metricool e, após o horário, confirmar a publicação na plataforma.
 
-A integração com Metricool não significa que existe postagem automática configurada: nenhuma tarefa atual envia publicações.
+A primeira publicação está preparada como rascunho nas tarefas ROT-21 e ROT-22 do Paperclip. O MP4 narrado foi anexado à tarefa de revisão; não publicar antes da aprovação da Revisora e da confirmação dos canais Metricool.
 
 ## Skills e custo de tokens
 
@@ -24,9 +24,9 @@ As skills próprias de texto, tradução/localização, produção de vídeo e e
 
 ## Meta, orçamento e gate operacional
 
-A meta da empresa no Paperclip é R$ 10.000 de MRR até 30/06/2027, vinculada ao projeto Canal e Conteúdo Web. Acompanhar receita recorrente efetivamente recebida, clientes pagantes, churn e fontes; não contar visualizações, projeções ou receita pontual como MRR. O orçamento autorizado de IA é R$ 0/mês. Como `budgetMonthlyCents: 0` no Paperclip desativa o limite, não representa gasto zero, os agentes e o gatilho diário foram pausados até a existência de um modelo local gratuito comprovado ou uma nova decisão de orçamento. A conexão LLMF/OpenAI atual é classificada como API tarifada e não informa custo por execução.
+A meta da empresa no Paperclip é R$ 10.000 de MRR até 30/06/2027, vinculada ao projeto Canal e Conteúdo Web. Acompanhar receita recorrente efetivamente recebida, clientes pagantes, churn e fontes; não contar visualizações, projeções ou receita pontual como MRR. O orçamento autorizado de IA é R$ 0/mês. Como `budgetMonthlyCents: 0` no Paperclip desativa o limite, o proxy local aceita apenas `openai/fast` e o encaminha para `kilo-gateway/kilo-auto/free`, sem fallback pago. Se a cota grátis estiver indisponível, os tickets devem parar. As conexões pagas permanecem configuradas para uso futuro somente depois da autorização de créditos. A equipe foi reativada nessa rota gratuita.
 
-Foram adicionadas as skills `gate-de-conclusao-paperclip` (delegação e evidência antes de concluir tarefas) e `insights-de-audiencia` (leitura de métricas e hipóteses sem alterar contas nem publicar). A primeira deve ser usada pela Diretora, Pesquisador e Revisor; a segunda pela Diretora e Pesquisador. Skills e meta estão no banco local Paperclip e devem ser exportadas junto com a empresa ao migrar para VPS.
+Foram adicionadas as skills `gate-de-conclusao-paperclip` (delegação e evidência antes de concluir tarefas), `insights-de-audiencia` (leitura de métricas e hipóteses) e `publicacao-social` (publicação após aprovação e análise de métricas agregadas). Skills e meta estão no banco local Paperclip e devem ser exportadas junto com a empresa ao migrar para VPS.
 
 ## VPS e Git
 

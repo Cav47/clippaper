@@ -9,3 +9,4 @@ out
 .venv/
 voice-models/
 voice-output/
+public/audio/short-estudo.wav

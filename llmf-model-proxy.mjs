@@ -3,6 +3,10 @@ import { readFileSync } from 'node:fs';
 
 const upstream = 'http://127.0.0.1:8000';
 const allowedPaths = new Set(['/v1/chat/completions', '/v1/models']);
+// Paperclip agents use the single `fast` alias. Keep this proxy strictly on
+// Kilo's no-credit free router; reject arbitrary model overrides so a paid
+// model cannot be selected through this connection.
+const freeModel = 'kilo-gateway/kilo-auto/free';
 const apiKeyPath = process.env.LLMF_API_KEY_FILE ?? new URL('./.llmf-api-key', import.meta.url);
 let upstreamApiKey = '';
 try {
@@ -22,22 +26,22 @@ const server = createServer(async (request, response) => {
   let body = Buffer.concat(chunks);
   let modelName = '';
   let streaming = false;
+  if (request.url === '/v1/models' && request.method === 'GET') {
+    response.writeHead(200, { 'content-type': 'application/json' });
+    response.end(JSON.stringify({
+      object: 'list',
+      data: [{ id: 'fast', object: 'model', created: 0, owned_by: 'kilo-free' }],
+    }));
+    return;
+  }
   if (request.url === '/v1/chat/completions' && body.length) {
     try {
       const payload = JSON.parse(body.toString('utf8'));
-      if (
-        typeof payload.model !== 'string' ||
-        (payload.model !== 'fast' && !payload.model.startsWith('openai/'))
-      ) {
+      if (payload.model !== 'fast' && payload.model !== 'openai/fast') {
         response.writeHead(400).end();
         return;
       }
-      const model = payload.model === 'fast'
-        ? 'fast'
-        : payload.model.slice('openai/'.length);
-      // `fast` is the Paperclip model ID. Route it through LLMF's tool-capable
-      // ranked alias so provider fallback remains available to agent tools.
-      payload.model = model === 'fast' ? 'best' : model;
+      payload.model = freeModel;
       modelName = payload.model;
       streaming = payload.stream === true;
       // LLMF's provider stream adapter drops tool-call deltas. Request one

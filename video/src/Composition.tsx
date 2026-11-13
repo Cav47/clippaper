@@ -1,4 +1,4 @@
-import { AbsoluteFill, Easing, interpolate, Sequence, useCurrentFrame } from "remotion";
+import { AbsoluteFill, Audio, Easing, interpolate, Sequence, staticFile, useCurrentFrame } from "remotion";
 
 export type ShortProps = {
   brand: string;
@@ -7,6 +7,7 @@ export type ShortProps = {
   tip: string;
   action: string;
   cta: string;
+  audioSrc?: string;
 };
 
 type BeatProps = {
@@ -59,7 +60,7 @@ const Beat: React.FC<BeatProps> = ({ label, text, accent, beat }) => {
   );
 };
 
-export const ShortVertical: React.FC<ShortProps> = ({ brand, hook, narration, tip, action, cta }) => {
+export const ShortVertical: React.FC<ShortProps> = ({ brand, hook, narration, tip, action, cta, audioSrc }) => {
   const beats: BeatProps[] = [
     { label: "Comece leve", text: hook, accent: "#F5C86B", beat: 0 },
     { label: "Uma ideia da semana", text: narration[0] ?? "Uma mudança pequena pode tornar o começo mais leve.", accent: "#91D6B2", beat: 1 },
@@ -76,6 +77,7 @@ export const ShortVertical: React.FC<ShortProps> = ({ brand, hook, narration, ti
         fontFamily: "Arial, Helvetica, sans-serif",
       }}
     >
+      {audioSrc ? <Audio src={staticFile(audioSrc)} /> : null}
       <div style={{ position: "absolute", top: 72, left: 80, color: "#fff9e9", fontSize: 28, fontWeight: 700, letterSpacing: 2 }}>
         {brand}
       </div>

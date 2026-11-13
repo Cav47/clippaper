@@ -6,7 +6,8 @@
     "skills/producao-video/SKILL.md",
     "skills/economia-tokens/SKILL.md",
     "skills/gate-de-conclusao-paperclip/SKILL.md",
-    "skills/insights-de-audiencia/SKILL.md"
+    "skills/insights-de-audiencia/SKILL.md",
+    "skills/publicacao-social/SKILL.md"
   ],
   "requirements": "Remotion video project in video/ uses Node.js 20.19+, 22.13+ or 24+ and pnpm. Optional local voice environment is pinned in video/requirements-voice.txt. Review individual Piper voice MODEL_CARD licenses before downloading. RTK is optional and must be installed separately in the OpenCode runtime."
 }

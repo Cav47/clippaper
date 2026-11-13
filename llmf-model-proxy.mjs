@@ -3,7 +3,7 @@ import { readFileSync } from 'node:fs';
 
 const upstream = 'http://127.0.0.1:8000';
 const allowedPaths = new Set(['/v1/chat/completions', '/v1/models']);
-const apiKeyPath = new URL('./.llmf-api-key', import.meta.url);
+const apiKeyPath = process.env.LLMF_API_KEY_FILE ?? new URL('./.llmf-api-key', import.meta.url);
 let upstreamApiKey = '';
 try {
   upstreamApiKey = readFileSync(apiKeyPath, 'utf8').trim();

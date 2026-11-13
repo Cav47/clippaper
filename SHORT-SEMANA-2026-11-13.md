@@ -1,25 +1,25 @@
-# Short 4 — Um combinado simples na hora da refeição
+# Short 4 — Transições suaves entre atividades
 
-**Duração estimada:** 20–35 segundos  
+**Duração estimada:** 25–35 segundos  
 **Público:** adultos responsáveis pela rotina da família
 
 **Gancho**  
-O celular na mesa rouba a conversa que você nem percebe que está perdendo.
+Trocar de atividade sem briga: o segredo não é pressa, é aviso.
 
 **Narração**  
-Na família fictícia de Pedro e Júlia, o jantar virava tempo de tela sem querer. Eles combinaram: "celulares no balcão, só a gente na mesa". Não é regra rígida — se alguém precisa atender, atende. O ponto é criar um espaço onde a conversa aconteça, mesmo que dure dez minutos.
+Na família fictícia de Joana e Pedro, o filho resistia quando era hora de largar o tablet para o banho. Eles combinaram um aviso de cinco minutos com um sinal sonoro suave. Quando o som toca, ele sabe que tem tempo de fechar o que está fazendo. A transição virou combinado, não surpresa.
 
 **Dica prática**  
-Escolha um lugar fixo para os aparelhos durante a refeição e combine: "aqui a gente se fala".
+Use um timer com aviso sonoro cinco minutos antes da troca e diga o que vem depois: "daqui a cinco minutos, banho".
 
 **Pequena ação**  
-No próximo almoço ou jantar, coloque os celulares no combinado e veja o que surge.
+Na próxima transição difícil, programe o aviso e nomeie a próxima atividade.
 
 **CTA gentil**  
-Teste essa semana e adapte do seu jeito.
+Teste por uma semana e veja se as trocas ficam mais leves.
 
 **Legenda**  
-Um combinado simples na hora de comer pode abrir espaço para conversas que a correria costuma atropelar. Cada família encontra o próprio ritmo. #RotinaEmFamília #ComunicaçãoEmFamília
+Um aviso curto e o nome do que vem depois ajudam a criança a se preparar. Adapte o tempo e o sinal ao ritmo da sua casa. #RotinaEmFamília #TransiçõesSuaves
 
 ---
 

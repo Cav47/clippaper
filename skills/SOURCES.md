@@ -2,7 +2,7 @@
 
 ## Skills mantidas no projeto
 
-Essas sete instruções estão versionadas no Git e são descobertas pelo Paperclip no workspace:
+Essas oito instruções estão versionadas no Git e são descobertas pelo Paperclip no workspace:
 
 - `roteiro-social`: textos e roteiros em português brasileiro para o canal.
 - `traducao-localizacao`: tradução e adaptação cultural para idioma/região de destino.
@@ -10,9 +10,10 @@ Essas sete instruções estão versionadas no Git e são descobertas pelo Paperc
 - `economia-tokens`: leitura seletiva e saídas curtas sem perder evidência ou segurança.
 - `gate-de-conclusao-paperclip`: exige responsáveis corretos, subtarefas concluídas e evidência do artefato antes de fechar tarefas pai.
 - `insights-de-audiencia`: análise somente leitura de métricas e hipóteses editoriais com período, fonte e limites claros.
+- `pesquisa-tendencias-curtas`: atualização semanal com fontes oficiais, exemplos públicos verificáveis e hipóteses originais sem cópia.
 - `publicacao-social`: publicação com autorização e revisão registradas, seguida de análise de métricas agregadas.
 
-As três skills novas são instruções operacionais locais; não instalam dependências nem ampliam permissões de integrações.
+As quatro skills novas são instruções operacionais locais; não instalam dependências nem ampliam permissões de integrações.
 
 ## Skills de vídeo de terceiros
 

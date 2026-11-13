@@ -12,6 +12,7 @@ const example: ShortProps = {
   action: "Quando terminar, conversem: parar ou continuar?",
   cta: "Adapte à rotina de vocês. Como o começo fica mais leve?",
   audioSrc: "audio/short-estudo.wav",
+  musicSrc: "audio/short-estudo-bed.wav",
 };
 
 export const RemotionRoot: React.FC = () => (

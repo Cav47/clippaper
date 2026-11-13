@@ -1,6 +1,6 @@
 # Vídeos verticais — Remotion
 
-Template 1080×1920 para transformar roteiros aprovados em rascunhos de Shorts/Reels com texto animado e legendas. O exemplo usa `SHORT-SEMANA-2026-11-12.md`. Ainda não há MP4 renderizado ou revisado; não há narração ou música no exemplo.
+Template 1080×1920 para transformar roteiros aprovados em rascunhos de Shorts/Reels com texto animado e legendas. O exemplo usa `SHORT-SEMANA-2026-11-12.md`. Primeiro preview MP4 renderizado localmente em `out/SHORT-2026-11-12-preview.mp4` (pasta ignorada pelo Git) e conferido no começo, meio e fim. É um rascunho tipográfico silencioso: não tem narração, imagens de cena ou música e ainda precisa de revisão editorial antes de qualquer uso.
 
 ## Requisitos e comandos
 

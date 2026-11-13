@@ -11,7 +11,7 @@ A Diretora produz roteiros e legendas como arquivos Markdown no workspace. Cada 
 ## Como os Shorts e posts serão publicados
 
 1. Revisar e aprovar roteiro, legenda e afirmações factuais.
-2. Produzir e revisar o vídeo vertical final (MP4) com imagens, narração, legendas na tela e trilha com direitos de uso. O projeto possui um template Remotion vertical 1080×1920, mas ainda não foi renderizado nem validado como MP4. Piper TTS 1.8.0 está instalado em ambiente isolado local; nenhum modelo de voz foi baixado. O renderizador produz vídeo tipográfico, não cenas fotorrealistas; roteiro sozinho não pode ser enviado como Short/Reel.
+2. Produzir e revisar o vídeo vertical final (MP4) com imagens, narração, legendas na tela e trilha com direitos de uso. O primeiro preview local do template Remotion 1080×1920 foi renderizado e conferido no começo, meio e fim: `video/out/SHORT-2026-11-12-preview.mp4`. É tipográfico e silencioso, sem cenas fotorrealistas, voz ou música, e não está pronto para publicação. Piper TTS 1.8.0 está instalado em ambiente isolado; nenhum modelo de voz foi baixado.
 3. Para um Short do YouTube ou Reel do Instagram, anexar o vídeo final e preencher os metadados exigidos da plataforma. Para post estático, preparar imagem/carrossel e texto próprios.
 4. Usar Metricool para enviar à fila de revisão/agendamento somente após aprovação humana e confirmação das contas/canais pretendidos.
 5. Verificar o resultado no calendário do Metricool e, após o horário, confirmar a publicação na plataforma.

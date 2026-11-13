@@ -43,3 +43,11 @@ Foram adicionadas as skills `gate-de-conclusao-paperclip` (delegação e evidên
 ## VPS e Git
 
 Versionar código, instruções, roteiros e documentação. Não versionar chaves, senhas, tokens, cookies, banco de dados ou backups. A configuração da rotina, conexões, meta, skills instaladas e estado operacional do Paperclip residem no banco e precisam de backup/exportação e migração separados para a VPS. Na VPS, recriar segredos localmente, configurar Paperclip/LLMF/proxy como serviços persistentes e validar o agendador antes de liberar novas execuções. O repositório local está vinculado a `Cav47/clippaper`; o GitHub CLI está autenticado como `Cav47` pelo Keychain e `main` sincronizada com `origin/main`.
+
+## Skills e ferramentas externas avaliadas em 13/11/2026
+
+Foram importadas para a biblioteca da empresa Paperclip, fixadas em revisões específicas e atribuídas aos agentes pertinentes: NVIDIA Skill Inspector (CEO), Ponytail (CEO), Agent Reach (CEO, Diretora, Pesquisador, Criador e Analista) e Humanizer (Diretora, Criador e Revisor). O Paperclip materializa cada skill selecionada no próximo turno do agente. As skills externas não selecionadas não são carregadas por esses agentes.
+
+Na máquina local também estão SkillSpector 2.12.0 e Agent Reach 1.6.1 em CLI, além do Insomnia 13.4.0 em `~/Applications/Insomnia.app`. Não foram configurados logins, cookies, chaves ou sessões para Agent Reach/Insomnia. Use Agent Reach só para leitura pública; não inicialize sessões autenticadas nem reutilize cookies do Chrome.
+
+Foram avaliadas, mas não instaladas, as solicitações lemo-opuscar, rea, hallmark, last 30 days, scrapling, diagram-design, taste-skill, impeccable, ui-ux-pro-max, OpenViking, Ternary Bonsai, GLM-5.3-Flash, Unsloth Studio e Pizza Bot. Motivos e resultado da triagem estão em `skills/SOURCES.md`: alertas críticos/incompletos, bloqueio de importação do próprio Paperclip, falta de necessidade na arquitetura atual ou incompatibilidade entre modelos/arquitetura. Hallmark e Scrapling foram recusadas pela análise de segurança. Não contornar bloqueios do scanner ou do Paperclip.

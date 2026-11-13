@@ -1,0 +1,19 @@
+[Unit]
+Description=LLMF free-model endpoint for Paperclip
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=paperclip
+Group=paperclip
+WorkingDirectory=/home/paperclip/.local/share/rotina-em-familia
+Environment=HOME=/home/paperclip
+ExecStart=/home/paperclip/.local/share/rotina-em-familia/llmf-venv/bin/llmf serve --no-fallback --host 127.0.0.1 --port 8000 --api-keys-file /home/paperclip/.local/share/rotina-em-familia/llmf-api-key
+Restart=always
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

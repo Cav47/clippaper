@@ -1,77 +1,50 @@
-# Preparação da VPS — Rotina em Família
+# Paperclip na VPS
 
-Este documento prepara a migração; não provisiona servidor nem transfere o Paperclip. A instância atual continua no Mac.
+## Estado da implantação
 
-## Estado conhecido
+- Ubuntu 24.04, Paperclip `2026.1106.0`, Node 24, 4 vCPU e 8 GB de RAM.
+- O Paperclip roda como serviço de usuário `paperclipai.service`, com `linger` habilitado. O PostgreSQL embutido e os dados ficam no diretório persistente do usuário `paperclip`.
+- Paperclip, LLMF e proxy escutam somente em `127.0.0.1`; as portas `3100`, `8000` e `8001` não são públicas.
+- Agentes usam `openai/fast` → proxy local → `kilo-gateway/kilo-auto/free`. LLMF roda com `--no-fallback`; limite, falta de cota ou erro não troca para modelo pago.
+- O projeto está em `/home/paperclip/work/rotina-em-familia`, branch `main`. Os caminhos de workspace e instruções dos agentes devem permanecer Linux.
+- Rotinas de conteúdo estão pausadas enquanto houver issue bloqueado ou dependência de mídia inacessível. Microdramas fica em rascunhos. Publicação exige aprovação da versão exata e mídia durável validada.
 
-- Repositório: [`Cav47/clippaper`](https://github.com/Cav47/clippaper), branch `main` (público).
-- Paperclip local verificado em `2026.1106.0`; os dados operacionais vivem fora deste repositório.
-- O agente usa `openai/fast` por meio do proxy Node local em `127.0.0.1:8001`, que encaminha para LLMF em `127.0.0.1:8000`.
-- O projeto tem template Remotion vertical 1080×1920 e skills de texto, localização, vídeo e economia de tokens; o template ainda não foi renderizado/validado. Piper TTS 1.8.0 existe apenas no ambiente Python local; o modelo de voz não está instalado. Não há publicação automática.
-- A chave `.llmf-api-key` é local e ignorada pelo Git. Nunca copiar segredos, banco, exportações ou backups para este repositório público.
+## Serviços locais
 
-## Decisões antes de contratar/configurar
+As unidades `deploy/systemd/paperclip-llmf.service` e `deploy/systemd/paperclip-llmf-proxy.service` executam o endpoint gratuito e o proxy fixo. A chave fica em `/home/paperclip/.local/share/rotina-em-familia/llmf-api-key`, fora do Git, com permissão `0600`.
 
-1. Escolher VPS Linux, domínio e orçamento. As instruções oficiais atuais usam Ubuntu LTS e sugerem 1 vCPU/2 GB como ponto de partida; produção com agente, banco, proxy e arquivos pode precisar de mais recursos.
-2. Escolher o acesso: Paperclip autenticado com URL pública e HTTPS, ou autenticado em rede privada via VPN/Tailscale. Não expor a instância `local_trusted` na internet.
-3. Confirmar como o modelo funcionará no Linux. O LLMF atual está no Mac. Antes de migrar, comprovar que existe uma instalação Linux do LLMF que possa ficar como serviço; se não existir, escolher um endpoint compatível com OpenAI e chamadas de ferramentas. Não presumir que o aplicativo desktop FreeLLMAPI possa ser instalado ou executado na VPS.
-4. Escolher banco e armazenamento persistente. Para implantação durável, planejar PostgreSQL persistente/gerenciado e cópias externas do banco e dos arquivos.
-5. Decidir se a VPS só fará pull do repositório público ou também enviará alterações. Pull público não requer credencial; push requer chave SSH restrita ou token de escrita guardado fora do Git.
-
-## Arquitetura prevista
-
-```text
-Internet → domínio + HTTPS → proxy reverso → Paperclip autenticado
-                                            ├─ PostgreSQL persistente
-                                            ├─ armazenamento persistente de anexos
-                                            ├─ workspace Git clonado em disco persistente
-                                            └─ proxy LLMF (127.0.0.1:8001)
-                                                   └─ provedor de modelo (127.0.0.1:8000 ou API escolhida)
+```sh
+sudo systemctl status paperclip-llmf paperclip-llmf-proxy
+sudo -u paperclip env XDG_RUNTIME_DIR=/run/user/999 \
+  /home/paperclip/.local/bin/paperclipai service status
+curl http://127.0.0.1:3100/api/health
 ```
 
-Manter Paperclip, proxy de modelo e serviço de modelo na mesma máquina/rede privada, se o modelo exigir o endpoint local. Não abrir as portas `3100`, `8000` ou `8001` para a internet. A configuração do agente deve usar o proxy por loopback quando ambos estiverem no mesmo host.
+Uma resposta 429 de Kilo pausa o trabalho afetado. Não mude o modelo para provedor pago nem adicione fallback.
 
-## Migração da empresa
+## Acesso remoto
 
-Usar o fluxo de exportação/importação de empresa suportado pelo Paperclip para levar empresa, agentes, projetos, tarefas, rotinas, anexos e configurações portáveis. Revisar a exportação antes de transferir e guardá-la em local privado; ela não pertence ao repositório público.
+Sem domínio e HTTPS, não exponha a porta 3100. Para acesso temporário, crie um túnel SSH da porta local 3100 para `127.0.0.1:3100` na VPS e abra a porta local no navegador. Para acesso permanente de outros dispositivos, configure VPN ou domínio com HTTPS e autenticação Paperclip; não exponha `local_trusted` diretamente na Internet.
 
-A exportação de empresa não substitui um backup completo da instância. Para recuperação exata da instância, preservar separadamente o banco e o diretório de dados, incluindo o arquivo mestre de criptografia configurado pelo Paperclip. Proteger essa cópia como credencial de alto valor; sem a chave correspondente, segredos criptografados não podem ser recuperados. Manter também cópias persistentes dos arquivos de agentes e anexos.
+## Dados, backups e recuperação
 
-Após importar na VPS:
+Banco, anexos, diretórios de agentes/skills e `secrets/master.key` precisam de cópias protegidas e sincronizadas. A chave mestre só descriptografa segredos junto com o banco correspondente; mantenha os dois fora do Git e com acesso restrito. Guarde também workspace e arquivos locais necessários para retomar a produção. Nunca versione `.env`, chaves, banco, backups, `video/voice-models/`, WAVs ou MP4s gerados.
 
-- conferir empresa, agentes, projetos, tickets, anexos, rotinas, fuso e próximo horário;
-- recriar ou reconectar credenciais na tela de segredos/conexões do Paperclip; não presumir que OAuth, Metricool, GitHub ou tokens do provedor sejam portáveis;
-- clonar `main` em um diretório persistente e atualizar o workspace do projeto para esse caminho Linux. O caminho atual do Mac não existe na VPS;
-- validar as instruções e o modelo do agente, sem deixar URLs `localhost` apontando para serviços que não existem no host;
-- manter a rotina pausada até login, conexão do modelo, workspace, backup e anexo terem sido verificados.
+## Sincronização e verificação
 
-## Sequência de implantação
-
-1. Provisionar Linux atualizado, usuário de serviço sem privilégios, SSH por chave e firewall restrito.
-2. Configurar domínio e DNS; instalar Paperclip na versão escolhida, modo de implantação autenticado, HTTPS e banco/armazenamento persistentes.
-3. Criar login administrativo e confirmar que a porta do Paperclip só é alcançada por HTTPS/proxy reverso ou VPN.
-4. Instalar o modelo/proxy como serviços persistentes, com restart automático. Gerar uma nova chave local para o LLMF na VPS, permissões restritas e referência via arquivo/segredos. Não reutilizar nem versionar `.llmf-api-key` do Mac.
-5. Instalar RTK no usuário do OpenCode (opcional; versão OpenCode compatível 1.18.29+) e ativar o plugin; isso comprime saídas de shell, não elimina custos do modelo.
-6. Clonar o repositório, importar a empresa e apontar o workspace para o clone persistente.
-7. Reconectar os serviços e credenciais necessários diretamente no Paperclip. Nunca colocar tokens em arquivos versionados, logs ou comandos salvos no histórico.
-8. Rodar o diagnóstico oficial do Paperclip, confirmar `/api/health`, login, backup recente, acesso ao workspace e chamada de ferramenta do agente.
-9. Fazer uma execução controlada que crie um roteiro, leia-o de volta e anexe-o ao ticket. Confirmar que nenhum post foi enviado.
-10. Reiniciar Paperclip e serviços do modelo; conferir que dados, anexos, agente, rotinas e conexões continuam disponíveis. Só então habilitar o agendador.
-
-## Pronto para operar quando
-
-- Paperclip exige autenticação e HTTPS; portas internas não estão expostas.
-- Banco, anexos, arquivos persistentes e chave de criptografia têm backup recuperável fora do Git.
-- O modelo responde com chamadas de ferramenta após reinício do serviço.
-- O workspace aponta para o clone persistente de `main`; alterações editoriais são commitadas e sincronizadas.
-- Importação preservou tickets e rotina; o teste controlado foi anexado como rascunho.
-- Conexões que precisam de reautorização estão saudáveis. Nenhuma publicação automática foi ligada.
+1. Atualize o workspace persistente por Git e confira o hash do commit.
+2. Instale as dependências de vídeo pelo lockfile; use Piper e Remotion locais, sem API tarifada.
+3. Rode `paperclipai doctor`, confirme `/api/health`, serviço Paperclip e backup recente.
+4. Confirme agentes prontos, caminhos Linux válidos, conexões e workspace.
+5. Confirme `openai/fast` → `kilo-gateway/kilo-auto/free`; se a chamada falhar, não faça fallback.
+6. Confirme navegador headless, FFmpeg, Piper e voz antes de renderizar.
+7. Verifique rotinas e issues bloqueados antes de habilitar agendamentos. Não repita trabalho bloqueado nem publique sem revisão editorial exata.
 
 ## Referências oficiais
 
-- [Instalação e configuração de servidor/VPS](https://docs.paperclip.ing/guides/getting-started/installation/)
-- [Modos de implantação](https://docs.paperclip.ing/reference/deploy/deployment-modes/)
-- [Banco de dados e limites dos backups](https://docs.paperclip.ing/reference/deploy/database/)
-- [Segredos e chave mestre](https://docs.paperclip.ing/reference/deploy/secrets/)
-- [Exportação/importação de empresa](https://docs.paperclip.ing/guides/power/export-import/)
-- [Implantação VPS e persistência](https://docs.paperclip.ing/how-to/deploy-to-vps-or-fly/)
+- [Instalação do Paperclip](https://github.com/paperclipai/paperclip/blob/master/doc/INSTALLING.md)
+- [Segredos do Paperclip](https://github.com/paperclipai/paperclip/blob/master/doc/deploy/secrets.md)
+- [Backup e banco do Paperclip](https://github.com/paperclipai/paperclip/blob/master/doc/DATABASE.md)
+- [Uso gratuito e limites de Kilo](https://kilo.ai/docs/getting-started/using-kilo-for-free)
+- [Instalação local do Piper](https://github.com/OHF-Voice/piper1-gpl)
+- [Renderização Remotion](https://www.remotion.dev/docs/render)

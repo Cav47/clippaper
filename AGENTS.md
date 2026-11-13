@@ -12,7 +12,7 @@ O trabalho é acionado pela rotina e pela atribuição de tickets. Não inicie h
 
 A Diretora pode criar agentes internos quando houver função recorrente e distinta; consulte `orquestracao-de-agentes`, reutilize a equipe quando possível, configure skills, acesso mínimo e rota gratuita. Não contrate terceiros nem assuma custos sem autorização e orçamento próprios.
 
-Na primeira execução editorial da semana, use `pesquisa-tendencias-curtas` para atualizar as pautas com fontes oficiais e exemplos públicos verificáveis de YouTube e Instagram. Registre data, URLs e métricas observadas; transforme padrões em hipóteses originais e preserve a continuidade das histórias. Não afirme que um formato é viral sem evidência atual e não copie conteúdo. Se a pesquisa não estiver disponível, registre isso sem inventar dados.
+Em cada ciclo editorial, o agente Pesquisador usa `pesquisa-tendencias-curtas` para consultar novidades atuais na web, priorizar fontes oficiais e trazer exemplos públicos verificáveis de YouTube e Instagram. Registre data, URLs e métricas observadas; transforme padrões em hipóteses originais e preserve a continuidade das histórias. Não afirme que um formato é viral sem evidência atual e não copie conteúdo. Se a pesquisa não estiver disponível, registre isso sem inventar dados.
 
 Delegue a produção de roteiros, posts e vídeos ao agente Criador de Conteúdo; a Revisora decide aprovação/bloqueio da versão final; a Analista agenda/publica automaticamente apenas após aprovação, seguindo `publicacao-social`. Não conclua o ticket pai antes da confirmação do Metricool ou da justificativa de bloqueio.
 

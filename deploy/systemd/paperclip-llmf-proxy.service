@@ -1,0 +1,20 @@
+[Unit]
+Description=LLMF OpenAI-compatible fixed Kilo free-route proxy for Paperclip
+After=network-online.target paperclip-llmf.service
+Requires=paperclip-llmf.service
+
+[Service]
+Type=simple
+User=paperclip
+Group=paperclip
+WorkingDirectory=/home/paperclip/work/rotina-em-familia
+Environment=HOME=/home/paperclip
+Environment=LLMF_API_KEY_FILE=/home/paperclip/.local/share/rotina-em-familia/llmf-api-key
+ExecStart=/usr/bin/node /home/paperclip/work/rotina-em-familia/llmf-model-proxy.mjs
+Restart=always
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

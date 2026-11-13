@@ -17,7 +17,7 @@ export type ShortProps = {
   cta: string;
   audioSrc?: string;
   musicSrc?: string;
-  visualTheme?: "study" | "bedtime";
+  visualTheme?: "study" | "bedtime" | "meals" | "comunicacao";
 };
 
 type BeatProps = {
@@ -26,12 +26,12 @@ type BeatProps = {
   accent: string;
   beat: number;
   scene: number;
-  visualTheme?: "study" | "bedtime";
+  visualTheme?: "study" | "bedtime" | "meals" | "comunicacao";
 };
 
 const SceneArt: React.FC<{
   scene: number;
-  visualTheme?: "study" | "bedtime";
+  visualTheme?: "study" | "bedtime" | "meals" | "comunicacao";
 }> = ({ scene, visualTheme = "study" }) => {
   const frame = useCurrentFrame();
   const rise = interpolate(frame, [0, 18], [22, 0], {
@@ -44,6 +44,52 @@ const SceneArt: React.FC<{
   });
   const timer = scene === 2 || scene === 3;
   const family = scene === 1 || scene === 4;
+  if (visualTheme === "meals") {
+    return (
+      <div
+        style={{
+          position: "absolute",
+          top: 205,
+          left: 0,
+          right: 0,
+          display: "flex",
+          justifyContent: "center",
+          opacity,
+          transform: `translateY(${rise}px)`,
+        }}
+      >
+        <svg
+          width="760"
+          height="410"
+          viewBox="0 0 760 410"
+          role="img"
+          aria-label="Ilustração de uma refeição em família à mesa"
+        >
+          <ellipse cx="380" cy="354" rx="285" ry="34" fill="#4a3728" opacity=".24" />
+          <circle cx="380" cy="185" r="145" fill="#8c6d3f" />
+          <circle cx="380" cy="185" r="119" fill="#e9dcc8" />
+          <rect x="220" y="110" width="320" height="154" rx="14" fill="#fff4dc" stroke="#8c6d3f" strokeWidth="8" />
+          <rect x="270" y="130" width="220" height="30" rx="8" fill="#e9dcc8" />
+          <path d="M280 155q-6-12 12-12t12 12M310 155q-6-12 12-12t12 12M340 155q-6-12 12-12t12 12" fill="none" stroke="#b78944" strokeWidth="8" strokeLinecap="round" />
+          <rect x="300" y="270" width="160" height="62" rx="18" fill="#244364" stroke="#8c6d3f" strokeWidth="8" />
+          <path d="M300 301v52h160v-52" fill="#91d6b2" stroke="#124438" strokeWidth="8" />
+          {scene % 2 === 1 && (
+            <g>
+              <circle cx={scene === 1 ? 560 : 470} cy={scene === 1 ? 200 : 300} r="34" fill="#8c6d3f" />
+              <circle cx={scene === 1 ? 560 : 470} cy={scene === 1 ? 200 : 300} r="20" fill="#e9dcc8" />
+              <path d="M540 170q24-16 48 0" fill="none" stroke="#fff4dc" strokeWidth="6" strokeLinecap="round" />
+            </g>
+          )}
+          {scene === 4 && (
+            <g>
+              <path d="M410 90l-30 24 30 24 30-24z" fill="#fff4dc" stroke="#8c6d3f" strokeWidth="6" />
+              <path d="M410 114l-30-24 30-24 30 24z" fill="#fff4dc" stroke="#8c6d3f" strokeWidth="6" />
+            </g>
+          )}
+        </svg>
+      </div>
+    );
+  }
   if (visualTheme === "bedtime") {
     return (
       <div
@@ -81,6 +127,52 @@ const SceneArt: React.FC<{
               <path d="M490 255v-54q35-38 70 0v54" fill="#f5c86b" stroke="#124438" strokeWidth="8" />
               <path d="M476 255h98" stroke="#124438" strokeWidth="10" strokeLinecap="round" />
               <circle cx="525" cy="188" r="8" fill="#fff4dc" />
+            </g>
+          )}
+        </svg>
+      </div>
+    );
+  }
+  if (visualTheme === "comunicacao") {
+    return (
+      <div
+        style={{
+          position: "absolute",
+          top: 205,
+          left: 0,
+          right: 0,
+          display: "flex",
+          justifyContent: "center",
+          opacity,
+          transform: `translateY(${rise}px)`,
+        }}
+      >
+        <svg
+          width="760"
+          height="410"
+          viewBox="0 0 760 410"
+          role="img"
+          aria-label="Ilustração de conversa entre adulto e criança à mesa"
+        >
+          <ellipse cx="380" cy="354" rx="285" ry="34" fill="#2b3a4a" opacity=".24" />
+          <circle cx="380" cy="185" r="145" fill="#4a6fa5" />
+          <circle cx="380" cy="185" r="119" fill="#e8f0f9" />
+          <rect x="220" y="110" width="320" height="154" rx="14" fill="#dbeafe" stroke="#4a6fa5" strokeWidth="8" />
+          <rect x="270" y="130" width="220" height="30" rx="8" fill="#e8f0f9" />
+          <path d="M280 155q-6-12 12-12t12 12M310 155q-6-12 12-12t12 12M340 155q-6-12 12-12t12 12" fill="none" stroke="#4a6fa5" strokeWidth="8" strokeLinecap="round" />
+          <rect x="300" y="270" width="160" height="62" rx="18" fill="#244364" stroke="#4a6fa5" strokeWidth="8" />
+          <path d="M300 301v52h160v-52" fill="#91d6b2" stroke="#124438" strokeWidth="8" />
+          {scene % 2 === 1 && (
+            <g>
+              <circle cx={scene === 1 ? 560 : 470} cy={scene === 1 ? 200 : 300} r="34" fill="#6b5b95" />
+              <circle cx={scene === 1 ? 560 : 470} cy={scene === 1 ? 200 : 300} r="20" fill="#e8f0f9" />
+              <path d="M540 170q24-16 48 0" fill="none" stroke="#fff4dc" strokeWidth="6" strokeLinecap="round" />
+            </g>
+          )}
+          {scene === 4 && (
+            <g>
+              <path d="M410 90l-30 24 30 24 30-24z" fill="#fff4dc" stroke="#4a6fa5" strokeWidth="6" />
+              <path d="M410 114l-30-24 30-24 30 24z" fill="#fff4dc" stroke="#4a6fa5" strokeWidth="6" />
             </g>
           )}
         </svg>
@@ -456,7 +548,11 @@ export const ShortVertical: React.FC<ShortProps> = ({
       >
         {visualTheme === "bedtime"
           ? "SONO • ROTINA • FAMÍLIA"
-          : "ROTINA • ESTUDO • FAMÍLIA"}
+          : visualTheme === "meals"
+            ? "REFEIÇÃO • FAMÍLIA • LEVE"
+            : visualTheme === "comunicacao"
+              ? "DIÁLOGO • FAMÍLIA • LEVE"
+              : "ROTINA • ESTUDO • FAMÍLIA"}
       </div>
       {beats.map((beat, index) => (
         <Sequence key={beat.label} from={index * 150} durationInFrames={150}>

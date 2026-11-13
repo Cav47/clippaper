@@ -30,6 +30,36 @@ const bedtimeExample: ShortProps = {
   visualTheme: "bedtime",
 };
 
+const mealsExample: ShortProps = {
+  brand: "ROTINA EM FAMÍLIA",
+  hook: "A refeição vira batalha?",
+  narration: [
+    "Na família fictícia de Renata e Marcos, o filho deixava o prato quase cheio e a hora de comer virava cobrança.",
+    "Eles pararam de comentar a quantidade no prato e passaram a comer junto, com a conversa leve. A criança passou a se servir sozinha e a refeição ficou mais leve.",
+  ],
+  tip: "Ofereça variedade sem forçar, coma junto e mantenha a conversa sem comentar quanto o filho comeu.",
+  action: "Na próxima refeição, sente-se junto e não faça comentários sobre quanto o filho comeu.",
+  cta: "Cada família pode adaptar ao próprio ritmo. O que funciona por aí?",
+  audioSrc: "audio/short-refeicoes.wav",
+  musicSrc: "audio/short-refeicoes-bed.wav",
+  visualTheme: "meals",
+};
+
+const comunicacaoExample: ShortProps = {
+  brand: "ROTINA EM FAMÍLIA",
+  hook: "Perguntar 'como foi na escola?' vira interrogatório?",
+  narration: [
+    "Na família fictícia de Camila e Daniel, o filho respondia 'bem' ou ficava em silêncio quando perguntado sobre o dia.",
+    "Eles decidiram começar contando algo simples do próprio dia primeiro, sem pressionar. A criança passou a comentar espontaneamente aos poucos.",
+  ],
+  tip: "Comece contando algo simples do seu dia e espere; aceite respostas curtas sem insistir.",
+  action: "Na próxima chegada, conte uma coisa pequena do seu dia antes de perguntar sobre o dia da criança.",
+  cta: "Cada família pode adaptar ao próprio ritmo. O que funciona por aí?",
+  audioSrc: "audio/short-comunicacao.wav",
+  musicSrc: "audio/short-comunicacao-bed.wav",
+  visualTheme: "comunicacao",
+};
+
 export const RemotionRoot: React.FC = () => (
   <>
     <Composition
@@ -49,6 +79,24 @@ export const RemotionRoot: React.FC = () => (
       width={1080}
       height={1920}
       defaultProps={bedtimeExample}
+    />
+    <Composition
+      id="ShortRefeicoes"
+      component={ShortVertical}
+      durationInFrames={900}
+      fps={30}
+      width={1080}
+      height={1920}
+      defaultProps={mealsExample}
+    />
+    <Composition
+      id="ShortComunicacao"
+      component={ShortVertical}
+      durationInFrames={900}
+      fps={30}
+      width={1080}
+      height={1920}
+      defaultProps={comunicacaoExample}
     />
   </>
 );

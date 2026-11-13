@@ -2,10 +2,15 @@
 set -euo pipefail
 
 video_dir="$(cd -- "$(dirname -- "$0")/.." && pwd)"
+asset_name="${1:-short-estudo}"
+if [[ ! "$asset_name" =~ ^[A-Za-z0-9_-]+$ ]]; then
+  echo "Use somente letras, números, hífen e sublinhado no nome do áudio." >&2
+  exit 2
+fi
 model="$video_dir/voice-models/pt_BR-cadu-medium.onnx"
 config="$model.json"
-output="$video_dir/public/audio/short-estudo.wav"
-script="$video_dir/voiceover/short-estudo.txt"
+output="$video_dir/public/audio/$asset_name.wav"
+script="$video_dir/voiceover/$asset_name.txt"
 piper="$video_dir/.venv/bin/piper"
 
 if [[ ! -x "$piper" ]]; then

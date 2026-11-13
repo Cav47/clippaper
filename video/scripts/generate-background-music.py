@@ -1,13 +1,18 @@
 #!/usr/bin/env python3
-"""Create a gentle, original synthesized music bed for the study short."""
+"""Create a gentle, original synthesized music bed for a selected short."""
 from pathlib import Path
+import re
+import sys
 import wave
 
 import numpy as np
 
 RATE = 22050
 DURATION = 30.0
-OUT = Path(__file__).resolve().parents[1] / "public/audio/short-estudo-bed.wav"
+ASSET_NAME = sys.argv[1] if len(sys.argv) > 1 else "short-estudo"
+if not re.fullmatch(r"[A-Za-z0-9_-]+", ASSET_NAME):
+    raise SystemExit("Use somente letras, números, hífen e sublinhado no nome do áudio.")
+OUT = Path(__file__).resolve().parents[1] / f"public/audio/{ASSET_NAME}-bed.wav"
 
 def main():
     OUT.parent.mkdir(parents=True, exist_ok=True)

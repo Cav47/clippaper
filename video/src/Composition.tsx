@@ -17,6 +17,7 @@ export type ShortProps = {
   cta: string;
   audioSrc?: string;
   musicSrc?: string;
+  visualTheme?: "study" | "bedtime";
 };
 
 type BeatProps = {
@@ -25,9 +26,13 @@ type BeatProps = {
   accent: string;
   beat: number;
   scene: number;
+  visualTheme?: "study" | "bedtime";
 };
 
-const SceneArt: React.FC<{ scene: number }> = ({ scene }) => {
+const SceneArt: React.FC<{
+  scene: number;
+  visualTheme?: "study" | "bedtime";
+}> = ({ scene, visualTheme = "study" }) => {
   const frame = useCurrentFrame();
   const rise = interpolate(frame, [0, 18], [22, 0], {
     extrapolateLeft: "clamp",
@@ -39,6 +44,49 @@ const SceneArt: React.FC<{ scene: number }> = ({ scene }) => {
   });
   const timer = scene === 2 || scene === 3;
   const family = scene === 1 || scene === 4;
+  if (visualTheme === "bedtime") {
+    return (
+      <div
+        style={{
+          position: "absolute",
+          top: 205,
+          left: 0,
+          right: 0,
+          display: "flex",
+          justifyContent: "center",
+          opacity,
+          transform: `translateY(${rise}px)`,
+        }}
+      >
+        <svg
+          width="760"
+          height="410"
+          viewBox="0 0 760 410"
+          role="img"
+          aria-label="Ilustração de uma rotina tranquila antes de dormir"
+        >
+          <ellipse cx="380" cy="354" rx="285" ry="34" fill="#070f2c" opacity=".28" />
+          <circle cx="380" cy="185" r="145" fill="#354d80" />
+          <circle cx="380" cy="185" r="119" fill="#c7d3e9" />
+          <rect x="220" y="110" width="190" height="154" rx="12" fill="#182b50" stroke="#fff2cf" strokeWidth="10" />
+          <path d="M315 112v150m-93-76h186" stroke="#fff2cf" strokeWidth="8" />
+          <path d="M350 147a28 28 0 1 0 38 38 35 35 0 0 1-38-38" fill="#f5c86b" />
+          <path d="m258 145 5 10 11 2-8 8 2 11-10-5-10 5 2-11-8-8 11-2zM438 130l4 8 9 1-7 6 2 9-8-4-8 4 2-9-7-6 9-1z" fill="#fff2cf" />
+          <rect x="300" y="270" width="260" height="62" rx="18" fill="#244364" stroke="#fff2cf" strokeWidth="8" />
+          <path d="M300 301h260v52H300z" fill="#91d6b2" stroke="#124438" strokeWidth="8" />
+          <rect x="320" y="280" width="88" height="38" rx="17" fill="#fff4dc" />
+          <path d="M300 353v18m260-18v18" stroke="#124438" strokeWidth="12" strokeLinecap="round" />
+          {scene % 2 === 1 && (
+            <g>
+              <path d="M490 255v-54q35-38 70 0v54" fill="#f5c86b" stroke="#124438" strokeWidth="8" />
+              <path d="M476 255h98" stroke="#124438" strokeWidth="10" strokeLinecap="round" />
+              <circle cx="525" cy="188" r="8" fill="#fff4dc" />
+            </g>
+          )}
+        </svg>
+      </div>
+    );
+  }
   return (
     <div
       style={{
@@ -232,7 +280,14 @@ const SceneArt: React.FC<{ scene: number }> = ({ scene }) => {
   );
 };
 
-const Beat: React.FC<BeatProps> = ({ label, text, accent, beat, scene }) => {
+const Beat: React.FC<BeatProps> = ({
+  label,
+  text,
+  accent,
+  beat,
+  scene,
+  visualTheme,
+}) => {
   const frame = useCurrentFrame();
   const opacity = interpolate(frame, [0, 18, 132, 150], [0, 1, 1, 0], {
     extrapolateLeft: "clamp",
@@ -254,7 +309,7 @@ const Beat: React.FC<BeatProps> = ({ label, text, accent, beat, scene }) => {
         transform: `translateY(${translateY}px)`,
       }}
     >
-      <SceneArt scene={scene} />
+      <SceneArt scene={scene} visualTheme={visualTheme} />
       <div
         style={{
           color: accent,
@@ -301,9 +356,17 @@ export const ShortVertical: React.FC<ShortProps> = ({
   cta,
   audioSrc,
   musicSrc,
+  visualTheme = "study",
 }) => {
   const beats: BeatProps[] = [
-    { label: "Comece leve", text: hook, accent: "#F5C86B", beat: 0, scene: 0 },
+    {
+      label: "Comece leve",
+      text: hook,
+      accent: "#F5C86B",
+      beat: 0,
+      scene: 0,
+      visualTheme,
+    },
     {
       label: "Uma ideia da semana",
       text:
@@ -311,6 +374,7 @@ export const ShortVertical: React.FC<ShortProps> = ({
       accent: "#91D6B2",
       beat: 1,
       scene: 1,
+      visualTheme,
     },
     {
       label: "Experimente",
@@ -318,14 +382,23 @@ export const ShortVertical: React.FC<ShortProps> = ({
       accent: "#91D6B2",
       beat: 2,
       scene: 2,
+      visualTheme,
     },
-    { label: "Dica prática", text: tip, accent: "#F5C86B", beat: 3, scene: 3 },
+    {
+      label: "Dica prática",
+      text: tip,
+      accent: "#F5C86B",
+      beat: 3,
+      scene: 3,
+      visualTheme,
+    },
     {
       label: "Pequena ação",
       text: action,
       accent: "#91D6B2",
       beat: 4,
       scene: 4,
+      visualTheme,
     },
     {
       label: "Rotina em Família",
@@ -333,13 +406,17 @@ export const ShortVertical: React.FC<ShortProps> = ({
       accent: "#F5C86B",
       beat: 5,
       scene: 5,
+      visualTheme,
     },
   ];
 
   return (
     <AbsoluteFill
       style={{
-        background: "linear-gradient(150deg, #123F36 0%, #1B6854 100%)",
+        background:
+          visualTheme === "bedtime"
+            ? "linear-gradient(150deg, #101b3d 0%, #263b66 100%)"
+            : "linear-gradient(150deg, #123F36 0%, #1B6854 100%)",
         fontFamily: "Arial, Helvetica, sans-serif",
       }}
     >
@@ -377,7 +454,9 @@ export const ShortVertical: React.FC<ShortProps> = ({
           fontSize: 22,
         }}
       >
-        {"ROTINA • ESTUDO • FAMÍLIA"}
+        {visualTheme === "bedtime"
+          ? "SONO • ROTINA • FAMÍLIA"
+          : "ROTINA • ESTUDO • FAMÍLIA"}
       </div>
       {beats.map((beat, index) => (
         <Sequence key={beat.label} from={index * 150} durationInFrames={150}>

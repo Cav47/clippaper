@@ -1,12 +1,18 @@
 # Operação e publicação
 
+## CEO e fluxo de aprovação operacional
+
+O CEO “CEO — Rotina em Família” está no topo do organograma e a Diretora de Conteúdo agora reporta a ele; a equipe editorial segue abaixo da Diretora. O CEO revisa a fila aberta, valida prioridade, escopo, responsável e dependências, encaminha tarefas claras e acompanha bloqueios. Essa aprovação operacional libera uma tarefa para delegação; não substitui aprovações formais do board, autorização de gastos, revisão editorial exata nem confirmação de contas para publicação. O CEO usa apenas `openai/fast` na rota gratuita; não pode publicar, trocar credenciais, assumir custos ou contornar revisão.
+
+A skill `ceo-operacao-governanca` e as instruções `agents/ceo.md` definem esse papel. A primeira triagem executiva está registrada na ROT-29. A rotina diária permanece habilitada às 9h de São Paulo e está atribuída ao CEO; ele faz a triagem e delega a produção à Diretora, que preserva pesquisa → criação → revisão → Analista. ROT-6 e ROT-9 continuam bloqueadas por falhas anteriores de runner; não as reexecutar sem resolução comprovada.
+
 ## Até domingo
 
 A rotina da Diretora está habilitada diariamente às 9h no fuso America/Sao_Paulo até domingo. No domingo, restaurar o gatilho para segunda-feira às 9h em America/Los_Angeles, evitando execuções diárias durante a viagem. A configuração efetiva fica no banco do Paperclip; este arquivo registra o procedimento e não substitui backup/migração desse banco.
 
 ## Entrega atual
 
-A Diretora delega produção ao agente Criador de Conteúdo, que salva roteiro, legenda e mídia no workspace. Cada peça deve passar pela Revisora antes da publicação. O responsável autorizou publicação automática depois da aprovação editorial da versão exata, sem nova aprovação humana por peça. ROT-21 está bloqueado corretamente: o alvo é `SHORT-2026-11-12-narrado.mp4`; ROT-22 está bloqueado por falha de recuperação do Runner; o vídeo segue local, sem URL pública permanente/mediaId. A revisão antiga não aprova o narrado nem o ilustrado. Nenhum conteúdo foi publicado.
+A Diretora delega produção ao Criador e revisão à Revisora; a Analista agenda somente após aprovação editorial da versão exata e confirmação dos canais. A publicação automática continua autorizada apenas nesse fluxo e em contas conectadas. ROT-21 foi agendada no Metricool com publicação automática para YouTube Shorts e Instagram Reels; confira o status final no Planner antes de declarar que publicou. ROT-28 tem um novo rascunho “ritual leve para dormir”, com roteiro/legenda e MP4 local de 30 s, anexado no ticket e aguardando revisão editorial. Ele não tem URL pública permanente ou `mediaId`; não agendar nem publicar até aprovação e mídia acessível.
 
 ## Como os Shorts e posts serão publicados
 

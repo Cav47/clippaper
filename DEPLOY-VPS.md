@@ -2,7 +2,7 @@
 
 ## Estado da implantação
 
-- Ubuntu 24.04, Paperclip `2026.1106.0`, Node 24, 4 vCPU e 8 GB de RAM.
+- Ubuntu 24.04, Paperclip `2026.1106.0`, Node 24, OpenCode CLI `2.2.6`, 4 vCPU e 8 GB de RAM.
 - O Paperclip roda como serviço de usuário `paperclipai.service`, com `linger` habilitado. O PostgreSQL embutido e os dados ficam no diretório persistente do usuário `paperclip`.
 - Paperclip, LLMF e proxy escutam somente em `127.0.0.1`; as portas `3100`, `8000` e `8001` não são públicas.
 - Agentes usam `openai/fast` → proxy local → `kilo-gateway/kilo-auto/free`. LLMF roda com `--no-fallback`; limite, falta de cota ou erro não troca para modelo pago.
@@ -35,7 +35,7 @@ Banco, anexos, diretórios de agentes/skills e `secrets/master.key` precisam de 
 1. Atualize o workspace persistente por Git e confira o hash do commit.
 2. Instale as dependências de vídeo pelo lockfile; use Piper e Remotion locais, sem API tarifada.
 3. Rode `paperclipai doctor`, confirme `/api/health`, serviço Paperclip e backup recente.
-4. Confirme agentes prontos, caminhos Linux válidos, conexões e workspace.
+4. Confirme agentes prontos, `opencode` acessível pelo serviço, caminhos Linux válidos, conexões e workspace.
 5. Confirme `openai/fast` → `kilo-gateway/kilo-auto/free`; se a chamada falhar, não faça fallback.
 6. Confirme navegador headless, FFmpeg, Piper e voz antes de renderizar.
 7. Verifique rotinas e issues bloqueados antes de habilitar agendamentos. Não repita trabalho bloqueado nem publique sem revisão editorial exata.

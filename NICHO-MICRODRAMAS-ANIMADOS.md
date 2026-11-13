@@ -6,7 +6,7 @@
 
 Criar uma série vertical de animação original com personagens recorrentes, histórias curtas em episódios, conflitos cotidianos, humor leve e um gancho claro no final. A oportunidade mais defensável na pesquisa é o formato de microdrama animado seriado, e não uma promessa de viralização: combinar narrativa episódica com produção independente, mantendo IP, música e vozes originais/licenciadas.
 
-**Público piloto recomendado:** adolescentes a adultos (13+ / público geral), com histórias acessíveis para assistir em família. Não direcionar a crianças pequenas sem decidir e configurar corretamente a audiência infantil no YouTube e as proteções correspondentes.
+**Público do novo piloto:** crianças, com faixa etária específica definida antes de cada série e roteiro (por exemplo, pré-escolar, 5–8 ou 9–12). O CEO e a Diretora devem distinguir conteúdo infantil, público misto e público geral; quando for dirigido a crianças, configurar corretamente “Made for Kids” no YouTube. Não usar estética de desenho para esconder audiência real nem tentar escapar de moderação.
 
 ## Sinais de tendência encontrados em fontes oficiais
 
@@ -17,14 +17,14 @@ Criar uma série vertical de animação original com personagens recorrentes, hi
 
 Esses dados cobrem períodos e públicos específicos, sobretudo EUA e Índia. Não garantem viralização, monetização nem desempenho no Brasil; medir um piloto por retenção, conclusão, repetição, compartilhamentos e seguidores ganhos por visualização.
 
-## Fluxo de produção proposto
+## Fluxo de produção e compliance
 
-Equipe dedicada no Paperclip: CEO — Microdramas Animados → Diretora de Microdramas → Pesquisador de Microdramas → Criador de Animação → Revisor Editorial de Microdramas → Analista de Microdramas. A Diretora de Conteúdo existente coordena a fila comum e encaminha cada ciclo ao CEO do nicho correto. Os dois nichos usam a mesma organização e os canais autorizados Metricool: Instagram `cav470609`, YouTube `UCewElO68XOz1f4Gf7FWxSuA`, marca `8070469`. A produção dos nichos alterna em :00 e :30, mas só um ciclo pode estar ativo até concluir roteiro, renderização e revisão. Revisar a versão exata antes de agendar.
+Equipe dedicada no Paperclip: CEO — Microdramas Animados → Diretora de Microdramas → Pesquisador de Microdramas → Criador de Animação → Revisor Editorial de Microdramas → Analista de Microdramas. A Diretora de Conteúdo existente coordena a fila comum. Os microdramas ainda não têm canais próprios: manter vídeos e roteiros como rascunhos no Paperclip e não usar as contas da Rotina em Família. Produção alternada em :00 e :30; somente um ciclo pode trabalhar até concluir roteiro, renderização e revisão.
 
 ## Audiência e segurança
 
-Se a intenção for efetivamente atingir crianças, selecionar “made for kids” com base no público e nos fatores do YouTube, como personagens, linguagem, histórias e atividades voltadas a crianças. Essa escolha altera recursos e distribuição; não é determinada somente pelo estilo de desenho. A decisão é do criador e deve ser aplicada corretamente: [YouTube — Determine whether content is made for kids](https://support.google.com/youtube/answer/9528076?hl=en-EN).
+Definir e registrar a faixa etária pretendida e revisar assunto, audiência real, personagens, linguagem, atividades, músicas, histórias e metadata. Conteúdo de público misto pode ser “Made for Kids” quando também é direcionado a crianças; não classificar para preservar funcionalidades. Verificar políticas de segurança infantil, qualidade familiar, ausência de atos imitáveis perigosos, exploração, humilhação ou temas maduros em embalagem infantil. Não usar títulos/miniaturas enganosos nem conteúdo educativo falso, confuso ou repetitivo. Fontes oficiais: [YouTube — Made for Kids](https://support.google.com/youtube/answer/9528076?hl=en), [segurança infantil](https://support.google.com/youtube/answer/2801999?hl=en), [qualidade para crianças e famílias](https://support.google.com/youtube/answer/10774223?hl=en) e [políticas do YouTube Kids](https://support.google.com/youtube/answer/10938174?hl=en). Para Instagram, considerar a classificação 13+ e as proteções de Teen Accounts, evitando linguagem forte, acrobacias de risco e temas inadequados: [Meta — proteções 13+](https://about.fb.com/news/2026/04/instagram-expands-teen-accounts-inspired-by-13-content-ratings/).
 
 ## Cadência de postagem
 
-A produção do microdrama está agendada a cada hora no minuto :30, alternada com Rotina em Família no minuto :00. Antes de começar, a Diretora verifica a fila de ambos os projetos e aguarda qualquer ciclo ativo terminar. O teto combinado é de 10 publicações por canal em qualquer janela móvel de 24 horas, contando os dois nichos, com revisão exata obrigatória. Referências: [Metricool — Schedule and publish on YouTube](https://help.metricool.com/schedule-and-publish-on-youtube-gof0k), [Metricool — Schedule and post on Instagram](https://help.metricool.com/schedule-and-post-on-instagram-6b6q5).
+A produção de drafts do microdrama está agendada a cada hora no minuto :30, alternada com Rotina em Família no minuto :00. Antes de começar, a Diretora verifica a fila de ambos os projetos e aguarda qualquer ciclo ativo terminar. Não agendar nem publicar microdramas até haver canais próprios conectados e autorização. A Rotina em Família mantém seu teto de até 10 publicações por canal por janela móvel de 24 horas.

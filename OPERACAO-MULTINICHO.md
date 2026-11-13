@@ -23,10 +23,10 @@ Os agentes de cada equipe compartilham a conexão de IA gratuita já autorizada 
 
 ## Canais, aprovação e teto
 
-Por autorização do board, os dois projetos usam a conexão Metricool já instalada na organização: marca `8070469`, Instagram `cav470609`, YouTube `UCewElO68XOz1f4Gf7FWxSuA`. O limite é conjunto: no máximo 10 publicações por canal em qualquer janela móvel de 24 horas, contando os dois nichos.
+Somente Rotina em Família usa a conexão Metricool instalada: marca `8070469`, Instagram `cav470609`, YouTube `UCewElO68XOz1f4Gf7FWxSuA`. Microdramas Animados não tem canais próprios e deve manter todas as peças como rascunho; não usar nem agendar nas contas de Rotina em Família.
 
-A publicação automática só ocorre depois da aprovação editorial da versão exata, validação da mídia durável e conferência do calendário/limite. A cadência é de **produção** a cada 30 minutos; o máximo de publicações efetivas continua em 10 por canal por dia.
+A publicação de Rotina em Família só ocorre depois da aprovação editorial da versão exata, validação da mídia durável e conferência do calendário/limite de 10 por canal em 24 horas. A cadência é de **produção** a cada 30 minutos; microdramas permanecem rascunhos até ter canais próprios.
 
 ## Proteção do nicho de microdramas
 
-Produzir séries animadas originais para público recomendado 13+ / geral. Manter bíblia e continuidade dos personagens, originalidade de roteiro/arte/música/vozes, avaliar a audiência real por vídeo e aplicar a classificação Made for Kids quando apropriado.
+Produzir conteúdo infantil/familiar original. Definir a faixa etária por série e aplicar corretamente Made for Kids quando o conteúdo for dirigido a crianças, inclusive audiência mista quando aplicável. O CEO e a Diretora mantêm conhecimento dos padrões oficiais de segurança e qualidade do YouTube e das proteções 13+ do Instagram. Isso orienta conformidade, não garante imunidade a revisão/remover nem permite contornar moderação.

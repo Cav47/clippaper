@@ -8,7 +8,7 @@ A skill `ceo-operacao-governanca` e as instruções `agents/ceo.md` definem esse
 
 ## Cadência automatizada
 
-A empresa agenda ciclos a cada 30 minutos, alternando Rotina em Família e Microdramas Animados. A Diretora verifica os projetos e mantém apenas um ciclo ativo por vez; atrasos são pulados/coalescidos. As duas rotinas usam a rota gratuita. Publicação automática limitada a 10 peças por canal em cada janela móvel de 24 horas, somando os nichos. Revisão editorial exata continua obrigatória; se o limite for alcançado, manter em rascunho. A configuração efetiva fica no banco do Paperclip e precisa ser exportada para a VPS.
+A empresa agenda ciclos de produção a cada 30 minutos, alternando Rotina em Família e Microdramas Animados. A Diretora verifica os projetos e mantém apenas um ciclo ativo por vez; atrasos são pulados/coalescidos. Ambas usam a rota gratuita. A publicação automática de Rotina em Família é limitada a 10 peças por canal em cada janela móvel de 24 horas, com revisão editorial exata. Microdramas Animados não tem canal próprio e mantém tudo em rascunho; não usar as contas de Rotina em Família. A configuração efetiva fica no banco do Paperclip e precisa ser exportada para a VPS.
 
 ## Entrega atual
 
@@ -22,7 +22,7 @@ A Diretora delega produção ao Criador e revisão à Revisora; a Analista agend
 4. Depois da aprovação e com mídia acessível, a Analista confirma no Metricool as contas conectadas da marca e cria o agendamento no próximo horário recomendado e dentro da cadência da rotina. Não pede aprovação humana individual novamente.
 5. Verificar o calendário do Metricool e, após o horário, confirmar a publicação na plataforma; registrar conta, horário, identificador e link. Se a API não confirmar, reportar bloqueio, não declarar sucesso.
 
-As rotinas ativas da Diretora alternam a cada meia hora: Rotina em Família no minuto :00 e Microdramas no minuto :30, em America/Sao_Paulo. Cada CEO lidera seu fluxo e sua equipe; a Diretora coordena a fila comum e só permite uma execução por vez. Cada ciclo produz uma peça, com revisão exata obrigatória e teto combinado de 10 publicações por canal em 24 horas.
+As rotinas ativas da Diretora alternam a cada meia hora: Rotina em Família no minuto :00 e Microdramas no minuto :30, em America/Sao_Paulo. Cada CEO lidera seu fluxo e sua equipe; a Diretora coordena a fila comum e só permite uma execução por vez. Microdramas produz drafts, sem agendar ou publicar até haver canais próprios. Rotina em Família mantém revisão exata e teto de 10 publicações por canal em 24 horas.
 
 Para ROT-30, o repositório GitHub público foi usado como hospedagem permanente de origem; o Metricool importou os arquivos e passou a servir as mídias pela própria CDN. Para novos vídeos, repetir esse fluxo apenas depois da revisão editorial exata e registrar a URL permanente e os IDs retornados no ticket.
 
@@ -54,6 +54,6 @@ Foram avaliadas, mas não instaladas, as solicitações lemo-opuscar, rea, hallm
 
 ## Novo nicho em planejamento
 
-O Paperclip contém o projeto ativo **Microdramas Animados Originais**, dentro da mesma organização Rotina em Família, liderado pelo CEO de Microdramas e com equipe dedicada. A organização duplicada `80f16ecf-54f8-4b29-89cf-d75f8d522ee6` foi pausada para evitar duplicação. A recomendação de pesquisa, referências oficiais, público sugerido, fluxo editorial e riscos de cadência estão em `NICHO-MICRODRAMAS-ANIMADOS.md`. O projeto usa as mesmas contas sociais autorizadas e tem rotina ativa no minuto :30.
+O Paperclip contém o projeto ativo **Microdramas Animados Originais**, dentro da mesma organização Rotina em Família, liderado pelo CEO de Microdramas e com equipe dedicada. A organização duplicada `80f16ecf-54f8-4b29-89cf-d75f8d522ee6` foi pausada para evitar duplicação. O nicho está orientado a conteúdo infantil/familiar, com expertise de segurança e qualidade atribuída ao CEO e à Diretora. Ainda não há canais próprios; a rotina no minuto :30 produz somente rascunhos.
 
-A produção a cada 30 minutos foi ativada em rotinas alternadas entre os dois projetos da mesma organização. Ambos usam os canais conectados e autorizados; a publicação fica limitada a 10 itens autoagendados por canal em 24 horas, somando os projetos. Itens precisam de revisão exata e mídia durável. A conexão não informa o plano Metricool; 10/dia respeita o limite gratuito documentado para YouTube. Não ultrapassar esse teto.
+A produção a cada 30 minutos foi ativada em rotinas alternadas entre os dois projetos da mesma organização. Apenas Rotina em Família usa os canais conectados; seu teto é de 10 itens autoagendados por canal em 24 horas. Microdramas fica em rascunho até dispor de canais próprios e autorização. As peças infantis passam por revisão de audiência, segurança, qualidade, metadata e Made for Kids antes de qualquer futura publicação.

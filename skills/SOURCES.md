@@ -34,24 +34,24 @@ A verificação inicial do RTK registrou uma execução (`rtk git status`): econ
 
 Importadas como skills da empresa Paperclip, com revisões fixadas e atualização automática desativada:
 
-- `skill-inspector` — NVIDIA/skillspector; guia de inspeção de skills. A CLI SkillSpector 2.12.0 também está instalada localmente para escaneamento estático sem chamada de LLM.
-- `agent-reach` — Panniantong/Agent-Reach; CLI 1.6.1 instalada. Skill atribuída a CEO, Diretora, Pesquisador, Criador e Analista. A configuração de canais/sessões não foi inicializada; não importar cookies/sessões do Chrome nem iniciar login.
-- `ponytail` — DietrichGebert/ponytail; atribuída ao CEO.
-- `humanizer` — blader/humanizer; atribuída à Diretora, Criador e Revisor. A triagem encontrou alertas médios e foi feita revisão manual dos falsos positivos antes de importar.
+- [`skill-inspector`](https://github.com/NVIDIA/skillspector) — NVIDIA/skillspector; guia de inspeção de skills. A CLI SkillSpector 2.12.0 também está instalada localmente para escaneamento estático sem chamada de LLM.
+- [`agent-reach`](https://github.com/Panniantong/Agent-Reach) — Panniantong/Agent-Reach; CLI 1.6.1 instalada. Skill atribuída a CEO, Diretora, Pesquisador, Criador e Analista. A configuração de canais/sessões não foi inicializada; não importar cookies/sessões do Chrome nem iniciar login.
+- [`ponytail`](https://github.com/DietrichGebert/ponytail) — DietrichGebert/ponytail; atribuída ao CEO.
+- [`humanizer`](https://github.com/blader/humanizer) — blader/humanizer; atribuída à Diretora, Criador e Revisor. A triagem encontrou alertas médios e foi feita revisão manual dos falsos positivos antes de importar.
 
 As atribuições efetivas são registradas no banco do Paperclip; os objetos selecionados estão marcados para materialização no próximo turno do agente. O CLI da SkillSpector e o Agent Reach são instalações locais desta máquina, separadas das skills da empresa.
 
 ### Avaliadas, sem instalação
 
-- `hallmark` (BuilderIO): rejeitada pela inspeção de segurança crítica.
-- `scrapling` (D4Vinci): rejeitada pela inspeção crítica/incompleta e por exigir um coletor web com permissões de rede mais amplas que as necessárias.
+- [`hallmark`](https://github.com/BuilderIO/builder-agent-skills) (BuilderIO): rejeitada pela inspeção de segurança crítica.
+- [`scrapling`](https://github.com/D4Vinci/Scrapling) (D4Vinci): rejeitada pela inspeção crítica/incompleta e por exigir um coletor web com permissões de rede mais amplas que as necessárias.
 - `lemo-opuscar`: não instalada; script de setup continha comando de limpeza encadeado de alto risco, é voltada ao Claude e redundante com Remotion.
 - `rea` (reverse-engineer-anything): não instalada; instalador via `npx` sem pin e integração não necessária à operação atual.
 - `last 30 days`: não instalada; inspeção parcial apontou leitura de `.env`/credenciais e instalação de CLIs, enquanto a empresa já tem pesquisa de tendências e Agent Reach.
 - `diagram-design`: não instalada; o Paperclip bloqueou a importação ao detectar padrão de busca/execução remota em referência. Não contornar essa proteção.
 - `taste-skill`, `impeccable` e `ui-ux-pro-max`: não instaladas; inspeções incompletas dos arquivos referenciados e não há agente de interface no organograma atual.
-- `openviking`: não instalado; servidor de memória separado duplicaria a memória baseada em arquivos já existente.
-- `ternary bonsai` e `glm-5.3-flash`: modelos, não skills; não compatíveis com o Mac Intel/rota gratuita fixada atual.
+- [`openviking`](https://github.com/volcengine/OpenViking): não instalado; servidor de memória separado duplicaria a memória baseada em arquivos já existente.
+- `ternary bonsai` e `glm-5.3-flash`: modelos, não skills; não foram configurados porque a empresa está presa à rota gratuita atual. O GLM-5.3-Flash exige servidor GPU Linux de grande porte, muito além deste Mac Intel.
 - `unsloth studio`: ambiente separado para modelos locais/treino, sem necessidade operacional e incompatível com a rota atual.
 - `pizza bot`: aplicação externa de tarefas que duplicaria o Paperclip.
 

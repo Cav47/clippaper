@@ -1,6 +1,6 @@
 # Projeto piloto — Microdramas Animados Originais
 
-**Estado no Paperclip:** em andamento, sob liderança do CEO. Projeto local `1a61acff-600b-44a4-be63-609852269c94`. Rotina local `0c762ec9-c210-4eda-8471-dda27a4008f1`, disparo horário no minuto :30 (America/Sao_Paulo).
+**Estado no Paperclip:** projeto ativo na organização Rotina em Família, com CEO e equipe próprios. Projeto `1a61acff-600b-44a4-be63-609852269c94`; rotina `0c762ec9-c210-4eda-8471-dda27a4008f1`, disparo horário no minuto :30 (America/Sao_Paulo).
 
 ## Recomendação de nicho
 
@@ -19,7 +19,7 @@ Esses dados cobrem períodos e públicos específicos, sobretudo EUA e Índia. N
 
 ## Fluxo de produção proposto
 
-Usar a mesma equipe do Paperclip: Pesquisador de Pautas → Criador de Conteúdo → Revisor de Conteúdo → Analista de Redes. Produzir roteiros e personagens originais; cada episódio deve funcionar sozinho e avançar a continuidade. Revisar a versão exata antes de agendar. A conexão da nova marca ainda não existe; não publicar pelo Instagram `cav470609` ou pelo YouTube `UCewElO68XOz1f4Gf7FWxSuA` da Rotina em Família sem instrução expressa.
+Equipe dedicada no Paperclip: CEO — Microdramas Animados → Diretora de Microdramas → Pesquisador de Microdramas → Criador de Animação → Revisor Editorial de Microdramas → Analista de Microdramas. A Diretora de Conteúdo existente coordena a fila comum e encaminha cada ciclo ao CEO do nicho correto. Os dois nichos usam a mesma organização e os canais autorizados Metricool: Instagram `cav470609`, YouTube `UCewElO68XOz1f4Gf7FWxSuA`, marca `8070469`. A produção dos nichos alterna em :00 e :30, mas só um ciclo pode estar ativo até concluir roteiro, renderização e revisão. Revisar a versão exata antes de agendar.
 
 ## Audiência e segurança
 
@@ -27,4 +27,4 @@ Se a intenção for efetivamente atingir crianças, selecionar “made for kids�
 
 ## Cadência de postagem
 
-A produção de conteúdo está ativa a cada hora no minuto :30, alternando com Rotina em Família no minuto :00; a empresa produz uma peça a cada 30 minutos no total. A publicação automática fica limitada a 10 peças por canal em qualquer janela de 24 horas, com revisão exata obrigatória. Como esta marca ainda não tem canais conectados, as peças ficam como rascunhos. A conexão Metricool não expõe o plano da conta; 10/dia respeita o limite gratuito documentado para YouTube. O limite publicado para Instagram é 50 posts por 24 horas. Referências: [Metricool — Schedule and publish on YouTube](https://help.metricool.com/schedule-and-publish-on-youtube-gof0k), [Metricool — Schedule and post on Instagram](https://help.metricool.com/schedule-and-post-on-instagram-6b6q5).
+A produção do microdrama está agendada a cada hora no minuto :30, alternada com Rotina em Família no minuto :00. Antes de começar, a Diretora verifica a fila de ambos os projetos e aguarda qualquer ciclo ativo terminar. O teto combinado é de 10 publicações por canal em qualquer janela móvel de 24 horas, contando os dois nichos, com revisão exata obrigatória. Referências: [Metricool — Schedule and publish on YouTube](https://help.metricool.com/schedule-and-publish-on-youtube-gof0k), [Metricool — Schedule and post on Instagram](https://help.metricool.com/schedule-and-post-on-instagram-6b6q5).

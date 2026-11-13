@@ -4,11 +4,11 @@
 
 O CEO “CEO — Rotina em Família” está no topo do organograma e a Diretora de Conteúdo agora reporta a ele; a equipe editorial segue abaixo da Diretora. O CEO revisa a fila aberta, valida prioridade, escopo, responsável e dependências, encaminha tarefas claras e acompanha bloqueios. Essa aprovação operacional libera uma tarefa para delegação; não substitui aprovações formais do board, autorização de gastos, revisão editorial exata nem confirmação de contas para publicação. O CEO usa apenas `openai/fast` na rota gratuita; não pode publicar, trocar credenciais, assumir custos ou contornar revisão.
 
-A skill `ceo-operacao-governanca` e as instruções `agents/ceo.md` definem esse papel. A primeira triagem executiva está registrada na ROT-29. A rotina diária permanece habilitada às 9h de São Paulo e está atribuída ao CEO; ele faz a triagem e delega a produção à Diretora, que preserva pesquisa → criação → revisão → Analista. ROT-6 e ROT-9 continuam bloqueadas por falhas anteriores de runner; não as reexecutar sem resolução comprovada.
+A skill `ceo-operacao-governanca` e as instruções `agents/ceo.md` definem esse papel. A primeira triagem executiva está registrada na ROT-29. O CEO conduz duas rotinas alternadas: Rotina em Família no minuto :00 e Microdramas Animados no minuto :30, ambas no fuso America/Sao_Paulo. Cada execução delega pesquisa → criação → revisão → Analista. ROT-6 e ROT-9 continuam bloqueadas por falhas anteriores de runner; não as reexecutar sem resolução comprovada.
 
-## Até domingo
+## Cadência automatizada
 
-A rotina da Diretora está habilitada diariamente às 9h no fuso America/Sao_Paulo até domingo. No domingo, restaurar o gatilho para segunda-feira às 9h em America/Los_Angeles, evitando execuções diárias durante a viagem. A configuração efetiva fica no banco do Paperclip; este arquivo registra o procedimento e não substitui backup/migração desse banco.
+A empresa produz uma nova peça a cada 30 minutos alternando entre Rotina em Família e Microdramas Animados. O Paperclip coalesce execuções sobrepostas e pula atrasos; as duas rotinas usam a rota gratuita. Publicação automática limitada a 10 peças por canal em cada janela móvel de 24 horas. Revisão editorial exata continua obrigatória; se o limite for alcançado, manter em rascunho. A configuração efetiva fica no banco do Paperclip e precisa ser exportada para a VPS.
 
 ## Entrega atual
 
@@ -22,7 +22,7 @@ A Diretora delega produção ao Criador e revisão à Revisora; a Analista agend
 4. Depois da aprovação e com mídia acessível, a Analista confirma no Metricool as contas conectadas da marca e cria o agendamento no próximo horário recomendado e dentro da cadência da rotina. Não pede aprovação humana individual novamente.
 5. Verificar o calendário do Metricool e, após o horário, confirmar a publicação na plataforma; registrar conta, horário, identificador e link. Se a API não confirmar, reportar bloqueio, não declarar sucesso.
 
-A rotina ativa da Diretora cria uma peça por execução, usa subtarefas para Pesquisador → Criador → Revisora e delega à Analista apenas depois da aprovação exata. O gatilho atual é diário às 9h em America/Sao_Paulo até domingo; a configuração de domingo deve restaurá-lo para segunda-feira às 9h em America/Los_Angeles.
+A rotina ativa da Diretora cria uma peça por execução, usa subtarefas para Pesquisador → Criador → Revisora e delega à Analista apenas depois da aprovação exata. As rotinas alternam a cada meia hora: Rotina em Família no minuto :00 e Microdramas no minuto :30, em America/Sao_Paulo. Cada uma produz uma peça por execução, com revisão obrigatória e teto de 10 publicações por canal em 24 horas.
 
 Para ROT-30, o repositório GitHub público foi usado como hospedagem permanente de origem; o Metricool importou os arquivos e passou a servir as mídias pela própria CDN. Para novos vídeos, repetir esse fluxo apenas depois da revisão editorial exata e registrar a URL permanente e os IDs retornados no ticket.
 
@@ -56,4 +56,4 @@ Foram avaliadas, mas não instaladas, as solicitações lemo-opuscar, rea, hallm
 
 O Paperclip contém o projeto planejado **Microdramas Animados Originais**, liderado pelo CEO, como piloto separado de Rotina em Família. A recomendação de pesquisa, referências oficiais, público sugerido, fluxo editorial e riscos de cadência estão em `NICHO-MICRODRAMAS-ANIMADOS.md`. O projeto não usa as contas sociais atuais e ainda não tem rotina de publicação.
 
-O pedido de novos posts a cada 30 minutos não foi ativado: 48 posts por canal/dia excedem o limite publicado pela Metricool para YouTube (10/dia gratuito, 20/dia pago). A conexão não informa o plano da marca. Definir teto diário e janela de postagem antes de alterar o agendamento recorrente. Não criar 48 shorts diários nem enfileirar publicações além dos limites.
+A produção a cada 30 minutos foi ativada em rotinas alternadas entre os dois projetos. A publicação fica limitada a 10 itens autoagendados por canal em 24 horas; itens precisam de revisão exata, e o novo nicho permanece como rascunho até ter canais próprios conectados. A conexão não informa o plano Metricool; 10/dia respeita o limite gratuito documentado para YouTube. Não ultrapassar esse teto.

@@ -1,6 +1,6 @@
 # Projeto piloto — Microdramas Animados Originais
 
-**Estado no Paperclip:** planejado, sob liderança do CEO. Projeto local `1a61acff-600b-44a4-be63-609852269c94`.
+**Estado no Paperclip:** em andamento, sob liderança do CEO. Projeto local `1a61acff-600b-44a4-be63-609852269c94`. Rotina local `0c762ec9-c210-4eda-8471-dda27a4008f1`, disparo horário no minuto :30 (America/Sao_Paulo).
 
 ## Recomendação de nicho
 
@@ -27,4 +27,4 @@ Se a intenção for efetivamente atingir crianças, selecionar “made for kids�
 
 ## Cadência de postagem
 
-O pedido de uma postagem nova a cada 30 minutos não foi ativado. Isso representa até 48 posts por canal em 24 horas e ultrapassa o limite informado pela Metricool para YouTube (10 posts/dia no plano gratuito, 20/dia em planos pagos); o limite da API do Instagram é 50 posts por 24 horas. A conta Metricool não expõe seu plano nesta conexão. Definir uma janela e um teto compatíveis antes de programar a rotina: [Metricool — Schedule and publish on YouTube](https://help.metricool.com/schedule-and-publish-on-youtube-gof0k), [Metricool — Schedule and post on Instagram](https://help.metricool.com/schedule-and-post-on-instagram-6b6q5).
+A produção de conteúdo está ativa a cada hora no minuto :30, alternando com Rotina em Família no minuto :00; a empresa produz uma peça a cada 30 minutos no total. A publicação automática fica limitada a 10 peças por canal em qualquer janela de 24 horas, com revisão exata obrigatória. Como esta marca ainda não tem canais conectados, as peças ficam como rascunhos. A conexão Metricool não expõe o plano da conta; 10/dia respeita o limite gratuito documentado para YouTube. O limite publicado para Instagram é 50 posts por 24 horas. Referências: [Metricool — Schedule and publish on YouTube](https://help.metricool.com/schedule-and-publish-on-youtube-gof0k), [Metricool — Schedule and post on Instagram](https://help.metricool.com/schedule-and-post-on-instagram-6b6q5).

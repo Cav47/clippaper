@@ -18,3 +18,4 @@ description: Analisa métricas editoriais disponíveis em modo leitura e transfo
 ## Fontes
 
 - [YouTube Help: entender o desempenho do conteúdo](https://support.google.com/youtube/answer/12220281?hl=en) — métricas disponíveis em Shorts, incluindo visualizações, fontes de tráfego e “How viewers engaged”. Confirme os nomes atuais na interface.
+- [TeamYouTube: mudança na contagem de visualizações de Shorts](https://support.google.com/youtube/thread/333869549?hl=en) — desde 31/03/2025, uma reprodução ou repetição inicia a contagem de views; “engaged views” preserva a medida anterior de quem continuou assistindo.

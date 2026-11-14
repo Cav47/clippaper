@@ -16,6 +16,7 @@ description: Pesquisa novidades verificáveis da web em cada ciclo editorial de 
 - Registre uma ficha curta para cada experimento: hipótese, elemento alterado, público/formato, métrica primária, janela de avaliação e resultado contra a própria linha de base. Mude uma variável principal por vez quando possível. Comentários podem inspirar escolhas criativas futuras apenas em forma agregada e sem dados pessoais; nunca solicite informações de crianças.
 - Não chame algo de viral sem métricas e contexto comparável. Alcance de um exemplo não prova fórmula nem garante resultado.
 - Use métricas próprias das contas apenas se estiverem disponíveis ao agente: informe conta, período, denominador e fonte. Amostra pequena é hipótese, não conclusão.
+- Quando houver acesso de leitura autorizado ao Instagram profissional, consulte também a área “Best Practices” do painel profissional: a Meta diz que ela reúne orientações e dicas personalizadas sobre criação, engajamento, alcance, monetização e diretrizes. Registre a data e a orientação exibida; sem acesso à conta, não afirme que conferiu essa área.
 - Para conteúdo infantil/familiar, não consulte mensagens privadas, comentários de menores ou dados pessoais; observe classificação etária e segurança da história.
 - Termine cada pesquisa com até três hipóteses de pauta, URLs de apoio e um grau simples de confiança (baixo/médio/alto), explicando o que falta para validar.
 
@@ -28,5 +29,6 @@ description: Pesquisa novidades verificáveis da web em cada ciclo editorial de 
 ## Referências de pesquisa
 
 - [YouTube: microdramas serializados em Shorts](https://blog.youtube/culture-and-trends/the-evolution-of-web-series-on-youtube-microdramas/) — referência de formato; números e funcionalidades devem ser rechecados na fonte antes de serem apresentados como atuais.
+- [Meta: Best Practices para criadores no Instagram](https://about.fb.com/news/2024/10/best-practices-education-hub-creators-instagram/) — recomenda consultar dicas personalizadas do painel profissional quando acessível.
 - [GitHub: Cutroom](https://github.com/HarshyChoc/cutroom) — inspiração para planos de edição legíveis, validação e prévia/QC; não é dependência obrigatória do projeto.
 - [GitHub: Social Video Agent](https://github.com/bartlomiejborzucki/social-video-agent) — inspiração para gates por etapa, QA e fluxos locais; verifique manutenção, licença e requisitos antes de propor instalação.

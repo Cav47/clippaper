@@ -19,7 +19,9 @@ Esses dados cobrem períodos e públicos específicos, sobretudo EUA e Índia. N
 
 ## Fluxo de produção e compliance
 
-Equipe dedicada no Paperclip: CEO — Microdramas Animados → Diretora de Microdramas → Pesquisador de Microdramas → Criador de Animação → Revisor Editorial de Microdramas → Analista de Microdramas. A Diretora de Conteúdo existente coordena a fila comum. TikTok `MiniDramas` está conectado na marca Metricool 8070469. Preparar microdramas para essa conta; não usar Instagram/YouTube da Rotina em Família para novos episódios sem autorização específica da peça/rede. Produção alternada em :00 e :30; somente um ciclo pode trabalhar até concluir roteiro, renderização e revisão.
+Equipe dedicada no Paperclip: CEO — Microdramas Animados → Diretora de Microdramas → Pesquisador de Microdramas → Criador de Animação → Revisor Editorial de Microdramas → Analista de Microdramas. O projeto Rotina em Família foi cancelado e sua equipe específica pausada; não iniciar ciclos paralelos. O despachante Microdramas roda de hora em hora no minuto :30 (America/Sao_Paulo).
+
+O usuário autorizou distribuir os microdramas nas três redes conectadas à marca Metricool 8070469: Instagram cav470609, YouTube UCewElO68XOz1f4Gf7FWxSuA e TikTok MiniDramas. Adaptar versão e metadados por canal e verificar conexão/calendário. Só autoagendar após revisão editorial exata, mídia durável validada, audiência classificada corretamente e direitos confirmados; evitar duplicatas.
 
 ## Audiência e segurança
 

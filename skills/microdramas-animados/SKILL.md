@@ -37,10 +37,9 @@ O fluxo obrigatório é Pesquisa → Criação → Revisão editorial exata → 
 
 ## Publicação e limites
 
-- O Metricool agora mostra o TikTok `MiniDramas` conectado à marca 8070469 (`cav470609`). Preparar microdramas para TikTok somente; não usar os canais de Instagram/YouTube da Rotina em Família para episódios novos sem autorização específica da peça e do canal.
-- Agende/publice TikTok somente após a Revisora aprovar a versão exata, a mídia final estar acessível por URL HTTPS permanente, o canal e o calendário serem confirmados e a configuração de conteúdo gerado por IA estar correta. Nenhum TikTok constava publicado/agendado na consulta de 14/11/2026.
-- A cadência de produção é a cada 30 minutos, mas os nichos alternam e só um ciclo pode trabalhar por vez. Antes de abrir um ciclo, verificar produção, renderização e revisão do outro nicho; aguardar a conclusão.
-- Usar exclusivamente `openai/fast` pela conexão Paperclip. A rota de IA é openai/fast → proxy local 127.0.0.1:8001/v1 → allowlist gratuita round-robin/cooldown (Kilo Auto Free/Small, LLM7 Codestral/GPT-OSS, ChatJimmy Llama 3.1 8B, Pollinations OpenAI). Não habilite fallback genérico nem pago; se todas falharem, 503/Retry-After e aguarde a próxima cadência. Não alterar credenciais.
+- O único nicho ativo é Microdramas Animados Originais. O despachante ativo roda de hora em hora no minuto :30 (America/Sao_Paulo); projeto, rotina e agentes exclusivos de Rotina em Família estão cancelados/pausados. Não reative nem crie ciclos duplicados.
+- O usuário autorizou microdramas nas três redes conectadas à marca Metricool 8070469: Instagram cav470609, YouTube UCewElO68XOz1f4Gf7FWxSuA e TikTok MiniDramas. Verifique conexão e agenda em cada ciclo e adapte formato, áudio, legenda, capa e metadados por plataforma.
+- Autoagende cada versão somente após aprovação editorial exata, mídia HTTPS permanente validada, conta conectada, direitos e classificação corretos e limite de até 10 publicações por canal em 24h. Não duplicar peça publicada nem tratar produção horária como obrigação de postar a cada hora.
 
 ## Referências de políticas
 

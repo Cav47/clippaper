@@ -15,6 +15,13 @@ description: Publica somente peças aprovadas e analisa o desempenho orgânico e
 - Não altere credenciais, permissões, comentários, mensagens, anúncios ou configurações da conta. Não publique conteúdo alheio ao ticket.
 - Após o horário agendado, confirme o resultado no Metricool e registre plataforma, conta, data/hora, identificador e link. Se a API não confirmar, não declare sucesso.
 
+## TikTok — Microdramas Animados
+
+- Use a marca Metricool `8070469`, rede TikTok `MiniDramas`, exclusivamente para Microdramas. Não publique conteúdo da Rotina em Família no TikTok nem microdramas no Instagram/YouTube da Família sem autorização específica.
+- Agende auto-publicação apenas com a versão exata aprovada, vídeo HTTPS permanente validado, `autoPublish=true`, título, legenda sem quebras de linha e metadados de privacidade/audiência conferidos. Marque o indicador de conteúdo gerado por IA (`isAigc=true` ou campo equivalente) quando o vídeo for gerado ou substancialmente alterado por IA.
+- Antes do envio, valide MP4/MOV, 3 s–10 min e até 500 MB para auto-publicação. Os Shorts da Rotina em Família inspecionados usam H.264 vertical 1080×1920, 30 fps e AAC estéreo 48 kHz. O arquivo do Ep. 01 que falhou no TikTok estava em 20 fps, embora tivesse áudio AAC estéreo 48 kHz; não reutilize esse export para TikTok. Exporte Microdramas em CFR 30 fps e confira áudio/legendas antes da revisão. A API do TikTok não preserva quebras de linha; use publicação manual se a peça depender de efeitos nativos ou música fora do catálogo autorizado. Use música original/licenciada e confirme os direitos.
+- Mantenha o teto operacional de 10 publicações por canal em cada janela móvel de 24 h. A conexão de uma rede não significa que há conteúdo aprovado ou agendado: consulte o calendário antes de reportar.
+
 ## Análise de feeds e engajamento
 
 - Leia apenas métricas agregadas necessárias: alcance, visualizações, curtidas, comentários, compartilhamentos, salvamentos, retenção e cliques, conforme disponíveis.

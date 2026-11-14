@@ -23,9 +23,9 @@ Os agentes de cada equipe compartilham `openai/fast` via proxy local, com rotaç
 
 ## Canais, aprovação e teto
 
-Somente Rotina em Família usa a conexão Metricool instalada: marca `8070469`, Instagram `cav470609`, YouTube `UCewElO68XOz1f4Gf7FWxSuA`. Microdramas Animados não tem canais próprios e deve manter todas as peças como rascunho; não usar nem agendar nas contas de Rotina em Família.
+Conexão Metricool ativa: marca `8070469` (cav470609), fuso `America/Sao_Paulo`; Instagram `cav470609`, YouTube `UCewElO68XOz1f4Gf7FWxSuA` e TikTok `MiniDramas`. Família continua no Instagram/YouTube. Microdramas novos podem ser preparados para o TikTok `MiniDramas` somente; não cruzar episódios para as contas da Família sem autorização específica para a peça e rede.
 
-A publicação de Rotina em Família só ocorre depois da aprovação editorial da versão exata, validação da mídia durável e conferência do calendário/limite de 10 por canal em 24 horas. A cadência é de **produção** a cada 30 minutos; microdramas permanecem rascunhos até ter canais próprios.
+Qualquer publicação exige aprovação editorial da versão exata, mídia durável, canal/calendário confirmados e teto de 10 publicações por canal em 24 horas. Para TikTok, usar o canal `MiniDramas` apenas nos microdramas, com sinalização de AIGC quando aplicável. A cadência de 30 minutos é de produção, não publicação.
 
 ## Proteção do nicho de microdramas
 

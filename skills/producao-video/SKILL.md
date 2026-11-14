@@ -13,7 +13,7 @@ Use quando houver um roteiro aprovado para transformar em Short/Reel.
 2. Use Remotion e a composição reutilizável do projeto para criar vídeo vertical 9:16. Prefira texto, animações tipográficas, formas e ilustrações originais; use mídias externas só com licença verificada.
 3. Gere narração com Piper local somente se o modelo de voz e sua licença estiverem identificados e aprovados. A licença do motor não cobre automaticamente cada modelo de voz.
 4. Sincronize legendas legíveis com a narração; confira ortografia, ritmo, safe areas e volume. Não acrescente música sem origem/licença documentada.
-5. Valide roteiro/legendas e renderize uma prévia leve antes do MP4 final. Confira duração, proporção vertical, faixa de áudio, legibilidade nas safe areas e sincronização; inspecione quadros do começo, meio e fim. Depois do render, confirme que o arquivo abre e corresponde ao roteiro aprovado. Registre os resultados observáveis; não declare verificações que não executou.
+5. Valide roteiro/legendas e renderize uma prévia leve antes do MP4 final. Confira duração, proporção vertical, faixa de áudio, legibilidade nas safe areas, sincronização e taxa de quadros constante entre 23–60 fps (alvo 30 fps para TikTok); inspecione quadros do começo, meio e fim. Se a origem estiver fora da faixa, use `video/scripts/normalize-tiktok.sh` em um novo arquivo e revise a versão normalizada antes de aprovar. Depois do render, confirme que o arquivo abre e corresponde ao roteiro aprovado. Registre os resultados observáveis; não declare verificações que não executou.
 6. Renderize o MP4 no workspace, anexe-o como rascunho ao ticket e aguarde revisão humana. Não envie a Metricool, YouTube, Instagram ou outra rede.
 
 ## Limites de custo

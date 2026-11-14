@@ -8,7 +8,7 @@ A skill `ceo-operacao-governanca` e as instruções `agents/ceo.md` definem esse
 
 ## Cadência automatizada
 
-A empresa agenda ciclos de produção a cada 30 minutos, alternando Rotina em Família e Microdramas Animados. A Diretora verifica os projetos e mantém apenas um ciclo ativo por vez; atrasos são pulados/coalescidos. Ambas usam a rota gratuita. A publicação automática de Rotina em Família é limitada a 10 peças por canal em cada janela móvel de 24 horas, com revisão editorial exata. Microdramas Animados não tem canal próprio e mantém tudo em rascunho; não usar as contas de Rotina em Família. A configuração efetiva fica no banco do Paperclip e precisa ser exportada para a VPS.
+A empresa agenda ciclos de produção a cada 30 minutos, alternando Rotina em Família e Microdramas Animados. A Diretora verifica os projetos e mantém apenas um ciclo ativo por vez; atrasos são pulados/coalescidos. Ambas usam a rota gratuita. A publicação automática de Rotina em Família é limitada a 10 peças por canal em cada janela móvel de 24 horas, com revisão editorial exata. Microdramas Animados pode direcionar novas peças ao TikTok `MiniDramas` conectado na marca Metricool 8070469; não usar Instagram/YouTube da Rotina em Família para novos episódios sem autorização específica. A configuração efetiva fica no banco do Paperclip e precisa ser exportada para a VPS.
 
 ## Entrega atual
 
@@ -22,7 +22,7 @@ A Diretora delega produção ao Criador e revisão à Revisora; a Analista agend
 4. Depois da aprovação e com mídia acessível, a Analista confirma no Metricool as contas conectadas da marca e cria o agendamento no próximo horário recomendado e dentro da cadência da rotina. Não pede aprovação humana individual novamente.
 5. Verificar o calendário do Metricool e, após o horário, confirmar a publicação na plataforma; registrar conta, horário, identificador e link. Se a API não confirmar, reportar bloqueio, não declarar sucesso.
 
-As rotinas ativas da Diretora alternam a cada meia hora: Rotina em Família no minuto :00 e Microdramas no minuto :30, em America/Sao_Paulo. Cada CEO lidera seu fluxo e sua equipe; a Diretora coordena a fila comum e só permite uma execução por vez. Microdramas produz drafts, sem agendar ou publicar até haver canais próprios. Rotina em Família mantém revisão exata e teto de 10 publicações por canal em 24 horas.
+As rotinas ativas da Diretora alternam a cada meia hora: Rotina em Família no minuto :00 e Microdramas no minuto :30, em America/Sao_Paulo. Cada CEO lidera seu fluxo e sua equipe; a Diretora coordena a fila comum e só permite uma execução por vez. Microdramas pode preparar vídeos para TikTok MiniDramas; o agendamento exige revisão da versão exata e validação da mídia. Rotina em Família mantém revisão exata e teto de 10 publicações por canal em 24 horas.
 
 Para ROT-30, o repositório GitHub público foi usado como hospedagem permanente de origem; o Metricool importou os arquivos e passou a servir as mídias pela própria CDN. Para novos vídeos, repetir esse fluxo apenas depois da revisão editorial exata e registrar a URL permanente e os IDs retornados no ticket.
 
@@ -54,6 +54,6 @@ Foram avaliadas, mas não instaladas, as solicitações lemo-opuscar, rea, hallm
 
 ## Novo nicho em planejamento
 
-O Paperclip contém o projeto ativo **Microdramas Animados Originais**, dentro da mesma organização Rotina em Família, liderado pelo CEO de Microdramas e com equipe dedicada. A organização duplicada `80f16ecf-54f8-4b29-89cf-d75f8d522ee6` foi pausada para evitar duplicação. O piloto tem intenção editorial 13+ e produz somente rascunhos, ainda sem canais próprios. Cada peça exige avaliação individual de audiência real e configuração Made for Kids quando aplicável; o rótulo 13+ não contorna regras.
+O Paperclip contém o projeto ativo **Microdramas Animados Originais**, dentro da mesma organização Rotina em Família, liderado pelo CEO de Microdramas e com equipe dedicada. A organização duplicada `80f16ecf-54f8-4b29-89cf-d75f8d522ee6` foi pausada para evitar duplicação. O piloto tem intenção editorial 13+ e pode preparar vídeos para TikTok `MiniDramas` conectado; publicação segue revisão da versão exata, mídia durável e classificação de audiência correta. Cada peça exige avaliação individual de audiência real e configuração Made for Kids quando aplicável; o rótulo 13+ não contorna regras.
 
-A produção a cada 30 minutos foi ativada em rotinas alternadas entre os dois projetos da mesma organização. Isso é cadência de produção de rascunhos, não obrigação de publicar a cada meia hora. Apenas Rotina em Família usa os canais conectados; seu teto é de 10 itens autoagendados por canal em 24 horas. Microdramas fica em rascunho até dispor de canais próprios e autorização. Toda peça passa por revisão de audiência, segurança, qualidade, metadata e direitos antes de eventual publicação.
+A produção a cada 30 minutos foi ativada em rotinas alternadas entre os dois projetos da mesma organização. Isso é cadência de produção de rascunhos, não obrigação de publicar a cada meia hora. Apenas Rotina em Família usa os canais conectados; seu teto é de 10 itens autoagendados por canal em 24 horas. Microdramas pode agendar no TikTok conectado após revisão exata; não usar canais da Família para novos episódios. Toda peça passa por revisão de audiência, segurança, qualidade, metadata e direitos antes de eventual publicação.

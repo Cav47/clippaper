@@ -37,8 +37,8 @@ O fluxo obrigatório é Pesquisa → Criação → Revisão editorial exata → 
 
 ## Publicação e limites
 
-- O novo nicho ainda não tem canais próprios. Manter roteiros e vídeos como rascunhos locais/Paperclip; não usar nem publicar pelos canais da Rotina em Família.
-- Não agendar/publicar até haver canal próprio conectado e autorização específica; revisão exata e mídia durável validada continuam obrigatórias.
+- O Metricool agora mostra o TikTok `MiniDramas` conectado à marca 8070469 (`cav470609`). Preparar microdramas para TikTok somente; não usar os canais de Instagram/YouTube da Rotina em Família para episódios novos sem autorização específica da peça e do canal.
+- Agende/publice TikTok somente após a Revisora aprovar a versão exata, a mídia final estar acessível por URL HTTPS permanente, o canal e o calendário serem confirmados e a configuração de conteúdo gerado por IA estar correta. Nenhum TikTok constava publicado/agendado na consulta de 14/11/2026.
 - A cadência de produção é a cada 30 minutos, mas os nichos alternam e só um ciclo pode trabalhar por vez. Antes de abrir um ciclo, verificar produção, renderização e revisão do outro nicho; aguardar a conclusão.
 - Usar exclusivamente `openai/fast` pela conexão Paperclip. A rota de IA é openai/fast → proxy local 127.0.0.1:8001/v1 → allowlist gratuita round-robin/cooldown (Kilo Auto Free/Small, LLM7 Codestral/GPT-OSS, ChatJimmy Llama 3.1 8B, Pollinations OpenAI). Não habilite fallback genérico nem pago; se todas falharem, 503/Retry-After e aguarde a próxima cadência. Não alterar credenciais.
 

@@ -7,7 +7,7 @@
 - Paperclip, LLMF e proxy escutam somente em `127.0.0.1`; as portas `3100`, `8000` e `8001` não são públicas.
 - Agentes usam `openai/fast` → proxy local com rotação gratuita round-robin/cooldown (Kilo Auto Free/Small, LLM7 Codestral/GPT-OSS, ChatJimmy Llama 3.1 8B, Pollinations OpenAI). LLMF continua com `--no-fallback`; sem rota saudável retorna 503/Retry-After, sem modelo pago.
 - O projeto está em `/home/paperclip/work/rotina-em-familia`, branch `main`. Os caminhos de workspace e instruções dos agentes devem permanecer Linux.
-- Rotinas de conteúdo estão pausadas enquanto houver issue bloqueado ou dependência de mídia inacessível. Microdramas fica em rascunhos. Publicação exige aprovação da versão exata e mídia durável validada.
+- Rotinas de conteúdo estão pausadas enquanto houver issue bloqueado ou dependência de mídia inacessível. Microdramas pode ser preparado para TikTok MiniDramas; mantenha sem publicação até aprovação da versão exata e validação de mídia durável. Publicação exige aprovação da versão exata e mídia durável validada.
 
 ## Serviços locais
 

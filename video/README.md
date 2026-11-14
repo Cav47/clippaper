@@ -26,3 +26,7 @@ python3 -m venv .venv
 ```
 
 O modelo `pt_BR-cadu-medium` é obtido separadamente; veja `VOICE-MODEL.md` e confirme o `MODEL_CARD` da cópia exata. Não versione modelos grandes, chaves ou mídias de terceiros. Este template gera ilustrações vetoriais programadas; não gera cenas fotorrealistas por IA.
+
+
+## TikTok: exportação compatível
+O TikTok rejeita vídeos fora de 23–60 fps; prefira render CFR a 30 fps, H.264 `yuv420p`, MP4 e AAC a 48 kHz quando houver áudio. Para corrigir uma origem sem alterar nem sobrescrever o original, use `./scripts/normalize-tiktok.sh entrada.mp4 saida.mp4`. O normalizador cria um arquivo novo e só imprime metadados; ele não publica nem hospeda. Confira se há áudio e se a versão exata passou pela revisão editorial antes de usar `deploy/media-host/publish-approved-video.sh`.

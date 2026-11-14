@@ -19,6 +19,33 @@ if [[ -z "$video_stream" ]]; then
   echo "No readable video stream found." >&2
   exit 2
 fi
+# TikTok auto-publishing rejects sources outside 23–60 FPS. Fail before exposing
+# a file or creating a scheduled post; target a constant 30 FPS export.
+avg_fps=$(ffprobe -v error -select_streams v:0 -show_entries stream=avg_frame_rate -of default=noprint_wrappers=1:nokey=1 -- "$source_file")
+duration=$(ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 -- "$source_file")
+size=$(stat -c %s -- "$source_file")
+if ! python3 - "$avg_fps" "$duration" "$size" <<'PY'
+from fractions import Fraction
+import sys
+try:
+    fps = float(Fraction(sys.argv[1]))
+    duration = float(sys.argv[2])
+    size = int(sys.argv[3])
+except (ValueError, ZeroDivisionError):
+    raise SystemExit("Invalid video metadata")
+if not 23 <= fps <= 60:
+    print(f"Blocked: average frame rate {fps:.3f} FPS; TikTok requires 23–60 FPS. Re-render/normalize to constant 30 FPS.", file=sys.stderr)
+    raise SystemExit(1)
+if not 3 <= duration <= 600:
+    print(f"Blocked: duration {duration:.3f}s; TikTok auto-publish requires 3–600 seconds.", file=sys.stderr)
+    raise SystemExit(1)
+if size > 500 * 1024 * 1024:
+    print(f"Blocked: file size {size} bytes; TikTok limit is 500 MB.", file=sys.stderr)
+    raise SystemExit(1)
+PY
+then
+  exit 2
+fi
 hash=$(sha256sum -- "$source_file" | cut -d ' ' -f 1)
 name="${hash}.mp4"
 root="${PAPERCLIP_MEDIA_ROOT:-/srv/paperclip-public-media}"

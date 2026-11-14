@@ -19,7 +19,7 @@ Esses dados cobrem períodos e públicos específicos, sobretudo EUA e Índia. N
 
 ## Fluxo de produção e compliance
 
-Equipe dedicada no Paperclip: CEO — Microdramas Animados → Diretora de Microdramas → Pesquisador de Microdramas → Criador de Animação → Revisor Editorial de Microdramas → Analista de Microdramas. A Diretora de Conteúdo existente coordena a fila comum. Os microdramas ainda não têm canais próprios: manter vídeos e roteiros como rascunhos no Paperclip e não usar as contas da Rotina em Família. Produção alternada em :00 e :30; somente um ciclo pode trabalhar até concluir roteiro, renderização e revisão.
+Equipe dedicada no Paperclip: CEO — Microdramas Animados → Diretora de Microdramas → Pesquisador de Microdramas → Criador de Animação → Revisor Editorial de Microdramas → Analista de Microdramas. A Diretora de Conteúdo existente coordena a fila comum. TikTok `MiniDramas` está conectado na marca Metricool 8070469. Preparar microdramas para essa conta; não usar Instagram/YouTube da Rotina em Família para novos episódios sem autorização específica da peça/rede. Produção alternada em :00 e :30; somente um ciclo pode trabalhar até concluir roteiro, renderização e revisão.
 
 ## Audiência e segurança
 
@@ -27,4 +27,4 @@ Definir e registrar a faixa etária pretendida e revisar assunto, audiência rea
 
 ## Cadência de postagem
 
-A produção de drafts do microdrama está agendada a cada hora no minuto :30, alternada com Rotina em Família no minuto :00. Antes de começar, a Diretora verifica a fila de ambos os projetos e aguarda qualquer ciclo ativo terminar. Não agendar nem publicar microdramas até haver canais próprios conectados e autorização. A Rotina em Família mantém seu teto de até 10 publicações por canal por janela móvel de 24 horas.
+A produção de drafts do microdrama está agendada a cada hora no minuto :30, alternada com Rotina em Família no minuto :00. Antes de começar, a Diretora verifica a fila de ambos os projetos e aguarda qualquer ciclo ativo terminar. TikTok pode receber agendamentos depois de revisão editorial exata, mídia final permanente e classificação/metadata adequadas. Não assumir que já existe publicação TikTok: a consulta de 14/11/2026 não encontrou nenhuma. A Rotina em Família mantém seu teto de até 10 publicações por canal por janela móvel de 24 horas.

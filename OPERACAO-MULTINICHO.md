@@ -19,7 +19,7 @@ As rotinas usam uma fila serializada. A Diretora de Conteúdo e Fila Compartilha
 
 **Microdramas Animados:** CEO — Microdramas Animados (`841b1ae2-6c0c-4116-9a95-e6923502bb38`); Diretora de Microdramas (`b360589a-e8f8-4bdd-9894-217abfaee112`); Pesquisador de Microdramas (`ba43d50b-dea2-4a22-9781-f2a068f8ed33`); Criador de Animação (`014febc9-0987-43d4-b5dd-b9ef8f31f2f9`); Revisor Editorial de Microdramas (`3448362d-4865-48f5-843e-26d4ca7fdfa0`); Analista de Microdramas (`f30a3176-cbe0-4a70-8388-23f99fcc4688`).
 
-Os agentes de cada equipe compartilham a conexão de IA gratuita já autorizada na organização: modelo `openai/fast` via `kilo-gateway/kilo-auto/free`. Sem fallback pago; em falta de cota, pausar o ciclo afetado.
+Os agentes de cada equipe compartilham `openai/fast` via proxy local, com rotação gratuita entre Kilo Auto Free/Small, LLM7 Codestral/GPT-OSS, ChatJimmy Llama 3.1 8B e Pollinations OpenAI. Sem fallback pago; se toda a allowlist estiver indisponível, a execução pausa e a próxima cadência tenta um novo ciclo.
 
 ## Canais, aprovação e teto
 

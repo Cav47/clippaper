@@ -5,7 +5,7 @@
 - Ubuntu 24.04, Paperclip `2026.1106.0`, Node 24, OpenCode CLI `2.2.6`, 4 vCPU e 8 GB de RAM.
 - O Paperclip roda como serviço de usuário `paperclipai.service`, com `linger` habilitado. O PostgreSQL embutido e os dados ficam no diretório persistente do usuário `paperclip`.
 - Paperclip, LLMF e proxy escutam somente em `127.0.0.1`; as portas `3100`, `8000` e `8001` não são públicas.
-- Agentes usam `openai/fast` → proxy local → `kilo-gateway/kilo-auto/free`. LLMF roda com `--no-fallback`; limite, falta de cota ou erro não troca para modelo pago.
+- Agentes usam `openai/fast` → proxy local com rotação gratuita round-robin/cooldown (Kilo Auto Free/Small, LLM7 Codestral/GPT-OSS, ChatJimmy Llama 3.1 8B, Pollinations OpenAI). LLMF continua com `--no-fallback`; sem rota saudável retorna 503/Retry-After, sem modelo pago.
 - O projeto está em `/home/paperclip/work/rotina-em-familia`, branch `main`. Os caminhos de workspace e instruções dos agentes devem permanecer Linux.
 - Rotinas de conteúdo estão pausadas enquanto houver issue bloqueado ou dependência de mídia inacessível. Microdramas fica em rascunhos. Publicação exige aprovação da versão exata e mídia durável validada.
 
@@ -36,7 +36,7 @@ Banco, anexos, diretórios de agentes/skills e `secrets/master.key` precisam de 
 2. Instale as dependências de vídeo pelo lockfile; use Piper e Remotion locais, sem API tarifada.
 3. Rode `paperclipai doctor`, confirme `/api/health`, serviço Paperclip e backup recente.
 4. Confirme agentes prontos, `opencode` acessível pelo serviço, caminhos Linux válidos, conexões e workspace.
-5. Confirme `openai/fast` → `kilo-gateway/kilo-auto/free`; se a chamada falhar, não faça fallback.
+5. Confirme `openai/fast` → `127.0.0.1:8001/v1` e valide que apenas a allowlist gratuita está configurada. Se todas as rotas gratuitas falharem, aguarde Retry-After; não faça fallback pago.
 6. Confirme navegador headless, FFmpeg, Piper e voz antes de renderizar.
 7. Verifique rotinas e issues bloqueados antes de habilitar agendamentos. Não repita trabalho bloqueado nem publique sem revisão editorial exata.
 

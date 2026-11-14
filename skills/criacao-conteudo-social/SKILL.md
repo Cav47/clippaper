@@ -15,4 +15,9 @@ description: Produz roteiros, posts curtos e vídeos verticais originais para Ro
 - Para cada vídeo, entregue também um link HTTPS público permanente ou um `mediaId` do Metricool. Prefira upload direto pelo Metricool quando a conexão autorizada aceitar o arquivo; se precisar de URL, use apenas armazenamento durável já conectado e aprovado. Teste que o link abre o arquivo correto e registre URL, nome e tamanho no ticket.
 - Caminhos locais, anexos privados do Paperclip e links temporários não são URLs públicas. Não use hospedagem anônima, não publique em Git nem torne Drive/pastas públicas. Se faltar destino autorizado, mantenha o arquivo anexado e bloqueie publicação com a dependência explícita; nunca fabrique URL.
 - Você cria e finaliza peças; não agenda nem publica. Depois da revisão editorial aprovar o arquivo e legenda exatos, entregue à Diretora e à Analista para publicação automática conforme a skill `publicacao-social`.
-- Use somente `openai/fast` por meio do proxy Paperclip restrito a `kilo-gateway/kilo-auto/free`. Se o modelo gratuito exceder a cota ou ficar indisponível, pare e bloqueie a tarefa, sem fallback pago.
+- Use somente `openai/fast` por meio do proxy Paperclip. A rota de IA é openai/fast → proxy local 127.0.0.1:8001/v1 → allowlist gratuita round-robin/cooldown (Kilo Auto Free/Small, LLM7 Codestral/GPT-OSS, ChatJimmy Llama 3.1 8B, Pollinations OpenAI). Não habilite fallback genérico nem pago; se todas falharem, 503/Retry-After e aguarde a próxima cadência.
+
+
+## Padrão adicional de acabamento e aprendizado
+
+Antes de entregar ao Revisor, aplique `qualidade-video-curto`: avalie gancho, encenação dos personagens, continuidade, clareza visual em celular, voz/música, sincronismo e o MP4 final reproduzido. Para cada publicação confirmada, entregue ao Analista os indicadores e a fonte necessários para leitura comparável em 24h e 7d. Não altere o gate de revisão/publicação nem use métrica isolada como promessa de alcance.

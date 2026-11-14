@@ -13,3 +13,9 @@ Use em tarefas com logs, históricos, listas ou arquivos longos.
 - Resuma para uso interno sem perder IDs, erros, números, citações ou próximos passos verificáveis. Não comprima o conteúdo final solicitado nem dados de segurança.
 - Faça chamadas independentes em lote quando possível; não repita uma chamada que falhou com os mesmos dados.
 - Faça uma resposta final concisa. Não omita alertas, bloqueios ou aprovação humana para economizar tokens.
+
+## Rotação de IA gratuita no Paperclip
+
+- Agentes usam `openai/fast`; não mude o modelo por agente. O proxy local em `127.0.0.1:8001/v1` já faz rotação round-robin entre Kilo Auto Free/Small, LLM7 Codestral/GPT-OSS, ChatJimmy Llama 3.1 8B e Pollinations OpenAI.
+- O proxy aplica cooldown após limite/erro e retorna 503 + Retry-After quando nenhuma rota livre está disponível. Não acione fallback genérico, modelo pago ou conta com cobrança.
+- Se uma execução parar, registre rota/status sem prompt ou chave, preserve o ticket bloqueado e deixe a próxima cadência tentar uma execução nova. Nunca reabra automaticamente um ticket antigo bloqueado.

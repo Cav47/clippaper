@@ -40,7 +40,7 @@ O fluxo obrigatório é Pesquisa → Criação → Revisão editorial exata → 
 - O novo nicho ainda não tem canais próprios. Manter roteiros e vídeos como rascunhos locais/Paperclip; não usar nem publicar pelos canais da Rotina em Família.
 - Não agendar/publicar até haver canal próprio conectado e autorização específica; revisão exata e mídia durável validada continuam obrigatórias.
 - A cadência de produção é a cada 30 minutos, mas os nichos alternam e só um ciclo pode trabalhar por vez. Antes de abrir um ciclo, verificar produção, renderização e revisão do outro nicho; aguardar a conclusão.
-- Usar exclusivamente `openai/fast` pela rota gratuita fixa `kilo-gateway/kilo-auto/free`. Se a cota acabar ou a rota falhar, pausar o ciclo; não trocar para modelo pago nem alterar credenciais.
+- Usar exclusivamente `openai/fast` pela conexão Paperclip. A rota de IA é openai/fast → proxy local 127.0.0.1:8001/v1 → allowlist gratuita round-robin/cooldown (Kilo Auto Free/Small, LLM7 Codestral/GPT-OSS, ChatJimmy Llama 3.1 8B, Pollinations OpenAI). Não habilite fallback genérico nem pago; se todas falharem, 503/Retry-After e aguarde a próxima cadência. Não alterar credenciais.
 
 ## Referências de políticas
 

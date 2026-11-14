@@ -32,17 +32,24 @@ Skill canônica: company/memoria-operacional-supremo. Nunca registrar segredos. 
 - Metricool e Composio reportam conexão/health active/ok. Isto não significa OAuth de publicação de perfil. A autorização do toolkit YouTube foi iniciada e retornou authorization_required; ainda falta completar o consentimento Google no navegador. Não armazenar nem registrar link temporário de OAuth.
 - Metricool não oferece ações de alterar perfil; catálogo Composio atual não oferece ação de escrita Instagram. Não afirmar nome/bio/avatar alterados até confirmar escrita nas plataformas. Manter handles e perfis atuais; os assets visuais estão prontos e versão final precisa de OAuth válido.
 
-## Cota gratuita — 2026-11-14
-- Runs ROT-109 e ROT-110 falharam antes de gerar conteúdo: a rota única autorizada kilo-gateway/kilo-auto/free respondeu HTTP 429 (“Sign up for free… or come back later”).
-- Sem fallback pago. Rotinas Família :00 e Microdramas :30 pausadas; tickets bloqueados com monitor removido para impedir nova tentativa. Não reabrir até cota/acesso gratuito voltar e o usuário confirmar.
-- Causa é limite/acesso do provedor, não Metricool nem credenciais de publicação. Próximo passo: usuário regularizar a cota gratuita ou aguardar reset; então verificar saúde antes de retomar.
+## Incidente e recuperação de quota gratuita — 2026-11-14
+- ROT-109 e ROT-110 falharam antes de gerar conteúdo quando a rota única Kilo respondeu HTTP 429. Permanecem bloqueados, preservados e sem repetição.
+- Foi implantado no VPS um proxy local OpenAI-compatible com allowlist gratuita/keyless, round-robin, cooldown por status/timeout e 503/Retry-After se toda a capacidade gratuita estiver indisponível. Sem fallback pago.
+- Todas as 13 configurações de agente permanecem em `openai/fast` e usam a conexão local atual apontada para `127.0.0.1:8001/v1`; não é preciso reconfigurar agentes individualmente.
+- `llmf` é servido localmente em `127.0.0.1:8000` com `--no-fallback`. O proxy só admite a allowlist abaixo e não delega a seleção genérica do LLMF.
 
-## Roteamento gratuito — decisão 2026-11-14
-- A cota do Codex/chat desta conversa não é uma credencial/API transferível para a VPS. Não solicitar nem guardar senha/token para tentar copiá-la.
-- Todas as 13 configurações de agente seguem model openai/fast e conexão f8b44e1d; sua rota só aceita openai/fast → kilo-gateway/kilo-auto/free. O gateway respondeu 429.
-- A conexão alternativa chamada LLMF local gratuito (5e865a3c) usa endpoint local 8000/v1 e respondeu 401 sem autenticação; não redirecionar agentes a ela sem validar uma conexão real, gratuita e funcional. A rota atual usa 8001/v1 e anuncia apenas fast, mas o upstream gratuito está em limite.
-- CEO Supremo pode verificar health/status e modelos sem custo; só pode trocar uma execução para outra conexão já configurada, confirmada gratuita e saudável. Se não houver rota livre válida, pausar e registrar; nunca escolher uma rota paga.
-- ROT-104 permanece aprovado e autoagendado no Metricool para IG em 15/11/2026 10:00 e YouTube em 15/11/2026 16:00 (America/Sao_Paulo), ambos PENDING/autoPublish=true. Não declarar publicado antes do estado Publicado. Nenhuma outra peça vira publicação sem aprovação editorial exata.
+## Rotação gratuita — configuração e operação (14 nov 2026)
+- O orçamento de IA é R$ 0. Todas as configurações dos agentes continuam em `openai/fast`; o proxy local `127.0.0.1:8001/v1` distribui a alias `fast` exclusivamente por estas rotas gratuitas/keyless: `kilo-gateway/kilo-auto/free`, `kilo-gateway/kilo-auto/small`, `llm7/codestral-latest`, `llm7/gpt-oss:20b`, `chatjimmy/llama3.1-8B` e `pollinations/openai`.
+- O proxy escolhe as rotas em round-robin, pula provedores em cooldown e aplica cooldown após 401/403, 404, 429, 5xx ou timeout; registra apenas rota/status/latência, nunca prompts, respostas ou credenciais. Não habilitar fallback genérico do LLMF, porque pode incluir rotas pagas/limitadas. Não incluir serviços com cobrança, cartão obrigatório ou quota paga nesta allowlist.
+- Provas operacionais em 14/11/2026: respostas 200 de `llm7/codestral-latest`, `pollinations/openai` e `kilo-gateway/kilo-auto/small`; o Kilo `free`, LLM7 GPT-OSS e ChatJimmy também tiveram falhas intermitentes, aplicando cooldown e tentando a próxima rota. A disponibilidade muda por provedor.
+- Se nenhuma rota gratuita responder, o proxy retorna 503 e Retry-After; o trabalho pode ficar bloqueado até quota/capacidade retornar. Não há como garantir trabalho de inferência sem ao menos uma quota gratuita disponível. As rotinas novas seguem Família :00 e Microdramas :30 em `America/Sao_Paulo`, orçamento zero e sem fallback pago.
+- Rotinas ativas verificadas: Família `1f074a2c-a78c-4500-a248-972d3f0358d0`, Microdramas `60943aaa-518c-4d0f-8d42-2bc4735fc9de`. Execuções antigas ROT-109/ROT-110 continuam bloqueadas e não devem ser reabertas; a próxima cadência cria novas execuções.
+
+## Cota gratuita Codex
+- A quota da conversa/Codex não é uma credencial API transferível para a VPS. Não solicitar nem guardar segredo para tentar copiá-la.
+- Fontes verificadas em documentação oficial: Gemini API free tier (limites por modelo/projeto e aviso de uso de dados), Groq (rate limits por organização/modelo), OpenRouter `:free` (limites diários/por minuto), Cerebras (free tier de avaliação), Cloudflare Workers AI (franquia diária com conta/token), Hugging Face (crédito mensal pequeno) e Mistral (API requer ativação de billing). Nenhum destes novos conectores foi ativado porque exige conta/chave/grant que não existe na VPS; não inventar credenciais nem selecionar opção que possa cobrar.
+- A rotação efetivamente instalada usa apenas as rotas gratuitas/keyless do proxy local acima. Se uma rota ficar 429/5xx/timeout, aguarde o cooldown e use a próxima. Se todas falharem, a execução pausa; não há quota ilimitada garantida.
+- Próximo run agendado é uma tarefa nova e não reabre tickets bloqueados. Publicações continuam dependendo de revisão exata já registrada e das regras de canal/mídia.
 
 ## Publicação validada no Metricool — 2026-11-14
 - Microdrama Sinal de Tinta — Ep. 01 foi publicado em 14/11 às 12:15 em ambas as redes, sob autorização específica do usuário para usar as contas da Rotina em Família nesta peça: Instagram https://www.instagram.com/reel/DfugaxZAR_4/ e YouTube https://www.youtube.com/shorts/36U0AO8B_DI (Metricool id 428071508). Esta autorização é específica deste Ep. 01; Microdramas futuros continuam rascunhos até aprovação/canais próprios.

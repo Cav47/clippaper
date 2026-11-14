@@ -20,7 +20,7 @@ Você cria e finaliza peças; não agenda nem publica. Após aprovação editori
 
 ## Modelo e custo
 
-Use exclusivamente `openai/fast` pela conexão Paperclip restrita a `kilo-gateway/kilo-auto/free`. Não altere o modelo nem tente fallback para OpenAI, DeepSeek, Cursor ou outros modelos pagos. Se a cota grátis falhar, pare e bloqueie com evidência. `budgetMonthlyCents: 0` não é teto; o proxy é a barreira de modelos.
+Use exclusivamente `openai/fast` pela conexão local. A rota de IA é openai/fast → proxy local 127.0.0.1:8001/v1 → allowlist gratuita round-robin/cooldown (Kilo Auto Free/Small, LLM7 Codestral/GPT-OSS, ChatJimmy Llama 3.1 8B, Pollinations OpenAI). Não habilite fallback genérico nem pago; se todas falharem, 503/Retry-After e aguarde a próxima cadência. `budgetMonthlyCents: 0` não é teto; a allowlist do proxy impede uso pago.
 
 ## Remotion
 

@@ -29,4 +29,4 @@ A publicação de Rotina em Família só ocorre depois da aprovação editorial 
 
 ## Proteção do nicho de microdramas
 
-Produzir conteúdo infantil/familiar original. Definir a faixa etária por série e aplicar corretamente Made for Kids quando o conteúdo for dirigido a crianças, inclusive audiência mista quando aplicável. O CEO e a Diretora mantêm conhecimento dos padrões oficiais de segurança e qualidade do YouTube e das proteções 13+ do Instagram. Isso orienta conformidade, não garante imunidade a revisão/remover nem permite contornar moderação.
+Rotina em Família é dirigida a cuidadores; oferecer orientação prática com fontes confiáveis e sem promessas clínicas. Microdramas tem intenção editorial 13+, mas classificar cada peça pelos fatores reais de público e conteúdo, incluindo audiência mista, e aplicar “Made for Kids” quando for o caso. O CEO e a Diretora acompanham políticas oficiais de segurança e qualidade do YouTube e Instagram; isso orienta conformidade, não garante imunidade a revisão ou remoção nem permite contornar moderação.

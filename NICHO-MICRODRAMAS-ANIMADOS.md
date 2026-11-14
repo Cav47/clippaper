@@ -6,7 +6,7 @@
 
 Criar uma série vertical de animação original com personagens recorrentes, histórias curtas em episódios, conflitos cotidianos, humor leve e um gancho claro no final. A oportunidade mais defensável na pesquisa é o formato de microdrama animado seriado, e não uma promessa de viralização: combinar narrativa episódica com produção independente, mantendo IP, música e vozes originais/licenciadas.
 
-**Público do novo piloto:** crianças, com faixa etária específica definida antes de cada série e roteiro (por exemplo, pré-escolar, 5–8 ou 9–12). O CEO e a Diretora devem distinguir conteúdo infantil, público misto e público geral; quando for dirigido a crianças, configurar corretamente “Made for Kids” no YouTube. Não usar estética de desenho para esconder audiência real nem tentar escapar de moderação.
+**Público do novo piloto:** histórias animadas com intenção editorial 13+, conforme a decisão do usuário. Esse direcionamento não decide sozinho se um vídeo é “Made for Kids”: o CEO e a Diretora devem avaliar o público pretendido e real, tema, personagens, linguagem, música, atividades, história e metadata de cada peça. Classificar corretamente conteúdo dirigido também a crianças e manter rascunho para revisão humana quando houver dúvida material. Não usar estética ou rótulos para contornar moderação.
 
 ## Sinais de tendência encontrados em fontes oficiais
 

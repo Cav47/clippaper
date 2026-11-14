@@ -1,0 +1,13 @@
+:3101 {
+	@published path /m/*.mp4
+	handle @published {
+		root * /srv/paperclip-public-media
+		header X-Content-Type-Options nosniff
+		header Cache-Control "public, max-age=31536000, immutable"
+		header Content-Disposition inline
+		file_server
+	}
+	handle {
+		respond "Not found" 404
+	}
+}

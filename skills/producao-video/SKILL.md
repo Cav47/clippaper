@@ -25,4 +25,5 @@ Use quando houver um roteiro aprovado para transformar em Short/Reel.
 ## Fluxo reproduzível
 
 - Prefira decisões de edição, legendas e configurações que possam ser inspecionadas e repetidas em vez de refazer um pipeline exclusivo por peça. Mantenha originais separados de prévias e exports. Essa prática é inspirada em projetos locais como [Cutroom](https://github.com/HarshyChoc/cutroom), sem adicionar dependência ao runtime Remotion existente.
+- A [ffmpeg-skill](https://github.com/kajisho5/ffmpeg-skill) demonstra verificações locais com resultados estruturados; use-a como referência de QA. Ela não está instalada como ferramenta neste projeto — não alegue executar suas ferramentas MCP.
 - Não instale ferramentas de vídeo por tendência. Antes de sugerir uma instalação, confirme compatibilidade com Linux/VPS, espaço em disco, uso de CPU/RAM, licença, custo e se ela resolve uma falha real que Remotion/Piper não cobre.

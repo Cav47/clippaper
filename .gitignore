@@ -19,3 +19,4 @@ backups/
 
 # Chave local do proxy LLMF (nunca versionar)
 .llmf-api-key
+.llmf-route-state.json

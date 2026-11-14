@@ -1,8 +1,8 @@
 import { createServer } from 'node:http';
-import { readFileSync } from 'node:fs';
+import { readFileSync, writeFileSync } from 'node:fs';
 
 const upstream = 'http://127.0.0.1:8000';
-const allowedPaths = new Set(['/v1/chat/completions', '/v1/models']);
+const allowedPaths = new Set(['/v1/chat/completions', '/v1/models', '/status']);
 
 // Explicit allowlist of verified free/keyless LLMF routes.
 // Do not add paid or billing-backed model IDs here.
@@ -15,7 +15,35 @@ const freeModels = [
   'kilo-gateway/kilo-auto/small',
 ];
 let nextFreeModel = 0;
+let activeRoute = null;
 const modelCooldowns = new Map();
+const routeTelemetry = new Map();
+const routeStatePath = new URL('./.llmf-route-state.json', import.meta.url);
+try {
+  const saved = JSON.parse(readFileSync(routeStatePath, 'utf8'));
+  if (freeModels.includes(saved.activeRoute)) activeRoute = saved.activeRoute;
+  for (const model of freeModels) {
+    const item = saved.routes?.[model];
+    if (!item) continue;
+    routeTelemetry.set(model, item.telemetry ?? {});
+    if (Number(item.cooldownUntil) > Date.now()) modelCooldowns.set(model, Number(item.cooldownUntil));
+  }
+} catch {
+  // A missing/invalid local status cache is not an inference failure.
+}
+function persistRouteState() {
+  try {
+    writeFileSync(routeStatePath, JSON.stringify({
+      activeRoute,
+      routes: Object.fromEntries(freeModels.map((model) => [model, {
+        cooldownUntil: modelCooldowns.get(model) ?? null,
+        telemetry: routeTelemetry.get(model) ?? {},
+      }])),
+    }) + '\n', { mode: 0o600 });
+  } catch (error) {
+    console.log('[llmf-proxy] route status cache unavailable=' + String(error?.code ?? 'write_error'));
+  }
+}
 const apiKeyPath = process.env.LLMF_API_KEY_FILE ?? new URL('./.llmf-api-key', import.meta.url);
 let upstreamApiKey = '';
 try {
@@ -45,6 +73,25 @@ function isRetryableStatus(status) {
 const server = createServer(async (request, response) => {
   if (!allowedPaths.has(request.url) || !['GET', 'POST'].includes(request.method)) {
     response.writeHead(404).end();
+    return;
+  }
+
+  if (request.url === '/status' && request.method === 'GET') {
+    const now = Date.now();
+    response.writeHead(200, { 'content-type': 'application/json', 'cache-control': 'no-store' });
+    response.end(JSON.stringify({
+      checkedAt: new Date(now).toISOString(),
+      modelAlias: 'openai/fast',
+      activeRoute,
+      routing: 'round-robin-free-only',
+      routes: freeModels.map((model) => ({
+        model,
+        cooldownUntil: modelCooldowns.get(model) && modelCooldowns.get(model) > now
+          ? new Date(modelCooldowns.get(model)).toISOString()
+          : null,
+        ...(routeTelemetry.get(model) ?? {}),
+      })),
+    }));
     return;
   }
 
@@ -121,6 +168,9 @@ const server = createServer(async (request, response) => {
 
       if (result.ok) {
         modelCooldowns.delete(model);
+        activeRoute = model;
+        routeTelemetry.set(model, { lastStatus: result.status, lastSuccessAt: new Date().toISOString() });
+        persistRouteState();
         console.log('[llmf-proxy] free route=' + model + ' status=' + result.status + ' after=' + (Date.now() - startedAt) + 'ms');
         if (streaming) {
           const completion = await result.json();
@@ -181,10 +231,14 @@ const server = createServer(async (request, response) => {
       }
 
       modelCooldowns.set(model, Date.now() + retryDelayMs(result.status, result.headers));
+      routeTelemetry.set(model, { lastStatus: result.status, lastFailureAt: new Date().toISOString() });
+      persistRouteState();
       lastFailure = { model, status: result.status, body: errorBody };
       console.log('[llmf-proxy] free route cooldown=' + model + ' status=' + result.status);
     } catch (error) {
       modelCooldowns.set(model, Date.now() + retryDelayMs(503));
+      routeTelemetry.set(model, { lastStatus: 503, lastFailureAt: new Date().toISOString() });
+      persistRouteState();
       lastFailure = { model, status: 503, body: String(error?.name ?? 'upstream_unavailable') };
       console.log('[llmf-proxy] free route unavailable=' + model);
     } finally {

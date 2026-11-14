@@ -1,0 +1,16 @@
+{
+  "name": "@rotina-em-familia/ai-usage-dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Painel de uso observado, rotas gratuitas e cotas de IA do Paperclip.",
+  "paperclipPlugin": {
+    "manifest": "./dist/manifest.js",
+    "worker": "./dist/worker.js",
+    "ui": "./dist/ui"
+  },
+  "peerDependencies": {
+    "@paperclipai/plugin-sdk": "2026.1106.0",
+    "react": "^19.0.0"
+  }
+}

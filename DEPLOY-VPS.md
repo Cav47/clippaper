@@ -22,6 +22,13 @@ curl http://127.0.0.1:3100/api/health
 
 Uma resposta 429 de Kilo pausa o trabalho afetado. Não mude o modelo para provedor pago nem adicione fallback.
 
+
+## Alias local do OpenCode
+
+- O serviço executa como usuário Linux paperclip; sua configuração global precisa estar em /home/paperclip/.config/opencode/opencode.json. O arquivo versionado opencode.local.json sozinho não é carregado automaticamente pelo OpenCode.
+- O alias openai/fast aponta para http://127.0.0.1:8001/v1, modelo fast, que o proxy encaminha apenas às rotas gratuitas permitidas. A chave é local, arquivo com modo 0600, nunca a versionar nem imprimir em logs.
+- Após mudar essa configuração, rode opencode reload como paperclip; confirme openai/fast em opencode models e uma resposta de teste antes de liberar agentes. Não selecione modelos pagos nem fallback genérico.
+
 ## Acesso remoto
 
 Sem domínio e HTTPS, não exponha a porta 3100. Para acesso temporário, crie um túnel SSH da porta local 3100 para `127.0.0.1:3100` na VPS e abra a porta local no navegador. Para acesso permanente de outros dispositivos, configure VPN ou domínio com HTTPS e autenticação Paperclip; não exponha `local_trusted` diretamente na Internet.

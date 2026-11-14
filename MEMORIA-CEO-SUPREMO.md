@@ -67,3 +67,8 @@ Skill canônica: company/memoria-operacional-supremo. Nunca registrar segredos. 
 - Projeto Canal e Conteúdo Web cancelado; despachante Família pausado; agentes Família pausados. Microdramas é o único projeto editorial ativo, despachante no minuto :30 de cada hora, America/Sao_Paulo. Não reativar rotinas duplicadas.
 - Sinal de Tinta Ep. 01 consta publicado em Instagram/YouTube. A versão CFR 30 consta agendada no TikTok para 15/11 às 10:00 BRT, Metricool 428322087, PENDING/autoPublish=true na última consulta; não repetir. Esta atualização não teve consulta Metricool ao vivo.
 - Futuras peças: aprovar a versão exata, confirmar conta/horário/mídia/classificação/direitos e limite de 10 por canal/24h; adaptar formato e metadados por rede, sem duplicar.
+
+## Falha de execução OpenCode — 2026-11-14
+- ROT-116 bloqueou antes de iniciar produção com “selected AI account is unavailable”. Evidência adicional: OpenCode não listava o alias openai/fast; o arquivo opencode.local.json não era carregado automaticamente. O endpoint do proxy local anunciou o modelo fast.
+- Correção local: criado /home/paperclip/.config/opencode/opencode.json, compatível com a versão instalada do OpenCode, apontando exclusivamente para a rotação gratuita em 127.0.0.1:8001/v1. Configuração protegida em modo 0600, legível pelo usuário paperclip e fora do Git. Recarregado OpenCode.
+- Verificação: openai/fast aparece em opencode models e respondeu OK via execução normal. Proxy LLMF e Paperclip ativos; /api/health retorna 200. A rotina Microdramas mantém próxima execução às 18:30 BRT. O bloqueio antigo não foi repetido; a próxima cadência criará um novo ciclo.

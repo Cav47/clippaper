@@ -1,0 +1,10 @@
+CIDA|pf_dora|Moço, minha guia vence hoje! Ainda dá tempo?
+LIA1|pf_dora|Dá… se o número do protocolo estiver certo.
+LIA2|pf_dora|Ai, não… troquei dois dígitos!
+NILO1|pm_alex|Respira. Onde confere?
+NILO2|pm_alex|No comprovante anterior. Devagar, mas certo.
+LIA3|pf_dora|Corrigindo… enviado!
+CIDA2|pf_dora|Obrigada!
+NILO3|pm_alex|Prazo salvo. Conferência salva dia.
+NILO4|pm_alex|Lia… amanhã tem fila dobrada e um cadastro novo.
+LIA4|pf_dora|Cadastro novo? Que tipo de cadastro?

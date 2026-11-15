@@ -30,3 +30,6 @@ Antes de entregar ou aprovar qualquer Short/Reel, CEO, Diretora, Criador e Revis
 Todos os agentes do projeto Família consultam brand/rotina-em-familia/IDENTIDADE-VISUAL.md e a skill identidade-visual-rotina-familia antes de criar copy, capa ou imagem. Aplicar a marca “Rotina em Família”, assinatura “Pequenos passos. Mais presença.” e paleta verde petróleo/creme/coral/dourado. A identidade é para adultos responsáveis, com exemplos fictícios e sem promessas ou culpa. Não aplicar aos Microdramas.
 
 O usuário autorizou a mudança de nome público, bio e avatar nas contas atuais; preserve handles. O conector Metricool não tem ações de perfil e o Composio atual não autorizou o usuário/sessão nesta tentativa. Os arquivos estão prontos, mas não declare os perfis públicos atualizados até receber confirmação de uma conexão autenticada de perfil.
+
+
+Atribuição de subtarefas Microdramas: Pesquisador ba43d50b-dea2-4a22-9781-f2a068f8ed33; Criador de Animação 014febc9-0987-43d4-b5dd-b9ef8f31f2f9; Revisora Editorial 3448362d-4865-48f5-843e-26d4ca7fdfa0; Analista f30a3176-cbe0-4a70-8388-23c14c56ca88. A Diretora b360589a-e8f8-4bdd-9894-217abfaee112 coordena o pai e não recebe subtarefas de especialista. Verifique assignee e issue existente antes de iniciar; não crie tarefas aninhadas duplicadas.
